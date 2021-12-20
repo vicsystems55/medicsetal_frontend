@@ -406,7 +406,7 @@
                             <div class="auth-card__logo">
                                 <div class="auth-logo">
                                     <img class="auth-logo__icon" src="img/content/logotype.svg" width="44" alt="#" />
-                                    <div class="auth-logo__text">RTVRS</div>
+                                    <div class="auth-logo__text">Medicetal</div>
                                 </div>
                             </div>
                             <img class="auth-card__bg auth-bg-image-light" src="img/content/auth-bg.jpg" alt="#">
