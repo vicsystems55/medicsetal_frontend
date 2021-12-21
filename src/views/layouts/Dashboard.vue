@@ -464,7 +464,7 @@
                                     <div class="header__profile-image"><span class="header__profile-image-text">MA</span>
                                         <img src="img/content/humans/item-4.jpg" alt="#" />
                                     </div>
-                                    <div class="header__profile-text"><span>{{userDatax.userFullName}}</span>
+                                    <div class="header__profile-text"><span></span>
                                     </div><span class="icon-arrow-down">
                       <svg class="icon-icon-arrow-down">
                         <use xlink:href="#icon-arrow-down"></use>

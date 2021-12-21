@@ -535,22 +535,18 @@ export default {
                         loader.hide()
                     }, 5000)
 
-
-                    var bodyFormData = new FormData();
-
-                    bodyFormData.append('UserName', this.username); 
-
-                    bodyFormData.append('UserPassword', this.password); 
-
                   
                   this.axios({
                       method: 'post',
                       url: 'https://micro.rtvrs.com.ng/api/UserLogin',
-                      data: bodyFormData
+                       data: {
+                            email: this.email,
+                            password: this.password
+                        },
                   })
                   .then((response)=>{
-                      alert(this.username)
-                      alert(this.password)
+                    //   alert(this.username)
+                    //   alert(this.password)
 
                   
                       this.email = this.username

@@ -26,16 +26,41 @@
                             </router-link>
                             </li>
 
-                             <li class="sidebar__menu-item">
-                             <router-link class="sidebar__link " to="/user/resources" aria-expanded="true">
+                            <li class="sidebar__menu-item">
+                            <router-link class="sidebar__link " to="/userx" aria-expanded="true">
                                 <span class="sidebar__link-icon">
                                         <svg class="icon-icon-dashboard">
                                             <use xlink:href="#icon-dashboard"></use>
                                         </svg>
                                 </span>
-                                <span class="sidebar__link-text">Business Profile</span>
+                                <span class="sidebar__link-text">Packages</span>
                             </router-link>
                             </li>
+
+                            
+                            <li class="sidebar__menu-item">
+                            <router-link class="sidebar__link " to="/userx" aria-expanded="true">
+                                <span class="sidebar__link-icon">
+                                        <svg class="icon-icon-dashboard">
+                                            <use xlink:href="#icon-dashboard"></use>
+                                        </svg>
+                                </span>
+                                <span class="sidebar__link-text">My Leads</span>
+                            </router-link>
+                            </li>
+
+                            <li class="sidebar__menu-item">
+                            <router-link class="sidebar__link " to="/userx" aria-expanded="true">
+                                <span class="sidebar__link-icon">
+                                        <svg class="icon-icon-dashboard">
+                                            <use xlink:href="#icon-dashboard"></use>
+                                        </svg>
+                                </span>
+                                <span class="sidebar__link-text">My Page</span>
+                            </router-link>
+                            </li>
+
+                           
 
                             
                         
