@@ -1,7 +1,5 @@
-import AdminDashboard from '../views/admin/Dashboard'
-import AdminNotifications from '../views/admin/Notifications'
-
-// import AdminDemandNotices from '../views/admin/DemandNotices'
+import UserDashboard from '../views/users/Dashboard'
+import UserNotifications from '../views/users/Notifications'
 
 import Dashboard from '../views/layouts/Dashboard.vue'
 
@@ -14,18 +12,18 @@ const toast = useToast()
 
 export default [
  {
-   path: '/admin/',
-   name: 'Admin',
+   path: '/user/',
+   name: 'User',
    component: Dashboard,
     children: [
         {
             path: 'dashboard',
-            component: AdminDashboard
+            component: UserDashboard
         },
 
         {
             path: 'notifications',
-            component: AdminNotifications
+            component: UserNotifications
         },
 
 

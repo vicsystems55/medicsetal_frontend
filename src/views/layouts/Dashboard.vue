@@ -505,7 +505,7 @@
                     <div class="container container--sm">
                         <a class="sidebar__logo" href="index.html">
                       
-                            <div class="sidebar__logo-text">RTVRS</div>
+                            <div class="sidebar__logo-text">Medicsetal</div>
                         </a>
                     </div>
                 </div>
@@ -513,7 +513,7 @@
                    
 
                     <AdminSidebar v-if="is_admin"></AdminSidebar>
-                    <BoardAdminSidebar v-if="is_board_admin"></BoardAdminSidebar>
+                    <UserSidebar v-else></UserSidebar>
                    
 
                     <!-- <AdminSidebar v-else></AdminSidebar> -->
@@ -540,6 +540,7 @@
 <script>
 
 import BoardAdminSidebar from  '@/views/incs/BoardAdmin.vue'
+import UserSidebar from  '@/views/incs/UserSidebar.vue'
 import AdminSidebar from  '@/views/incs/AdminSidebar.vue'
 import { useToast } from 'vue-toastification'
 
@@ -551,7 +552,8 @@ export default {
     components:{
       
         AdminSidebar,
-        BoardAdminSidebar
+        // BoardAdminSidebar,
+        UserSidebar
     },
     data() {
         return {
@@ -603,22 +605,22 @@ export default {
         selectSideBar(){
             // alert('helped by God')
             if(localStorage.getItem('user_role') == '6'){
-                return this.is_admin = true;
+                // return this.is_admin = true;
                
 
             }
             if(localStorage.getItem('user_role') == '5'){
               
-                return this.is_board_admin = true
+                // return this.is_board_admin = true
                 
             }if(localStorage.getItem('user_role') == '9'){
               
-                return this.is_board_admin = true
+                // return this.is_board_admin = true
             }
             
             else{
-                this.$router.push('/login')
-                toast.warning('Session Expired');
+                // this.$router.push('/login')
+                // toast.warning('Session Expired');
             }
         }
     },

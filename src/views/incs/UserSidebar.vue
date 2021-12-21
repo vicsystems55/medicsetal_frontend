@@ -11,7 +11,7 @@
                                             <use xlink:href="#icon-person"></use>
                                         </svg>
                                 </span>
-                                <span class="sidebar__link-text">STATE OFFICER</span>
+                                <span class="sidebar__link-text">USER DASHBOARD</span>
                             </router-link>
                             </li>
 

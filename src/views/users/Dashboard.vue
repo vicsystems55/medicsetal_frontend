@@ -1,90 +1,140 @@
-<template lang="">
-    <div>
-                        <div class="container">
-                <div class="widgets">
-                    <div class="widgets__row row gutter-bottom-xl">
-                        <div class="col-12 col-md-6 col-xl-4 d-flex">
-                            <div class="widget">
-                                <div class="widget__wrapper">
-                                    <div class="widget__row">
-                                        <div class="widget__left">
-                                            <h3 class="widget__title">Revenue</h3>
-                                            <div class="widget__status-title text-grey">Total revenue today</div>
-                                            <div class="widget__trade">
-                                                <span class="widget__trade-count">N 0</span><span class="trade-icon trade-icon--up">
-                                                <svg class="icon-icon-trade-up">
-                                                    <use xlink:href="#icon-trade-up"></use>
-                                                </svg>
-                                            </span>
-                                                <span class="badge badge--sm badge--green">7%</span>
-                                            </div>
-                                            <div class="widget__details"><a class="link-under text-grey" >Detail</a>
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
+<template>
+   <div>
+         <div class="container">
+                <div class="page-header py-2">
+                    <h1 class="page-header__title">Hi, {{userData.userFullName}}</h1>
+                    <h6 class="font-italic">Username: {{userData.userName}}</h6>
+                    <h6 class="font-italic">Email: {{userData.email}}</h6>
+                </div>
+
+                 <div class="row">
+                
+
+                 <div class="col-md-4 p-2">
+                    <div class="widget">
+                        <div style="height: 130px;" class="widget__wrapper">
+
+                            <div class="">
+                                <h3 class="widget__title">Wallet</h3>
+                                <div class="widget__status-title text-grey">Total funds available</div>
+                                <div class="widget__trade">
+                                <span class="widget__trade-count"></span>
+                                <span class="trade-icon trade-icon--up">
+                                    <svg class="icon-icon-trade-up">
+                                        <use xlink:href="#icon-trade-up"></use>
+                                    </svg>
+                                </span>
+                                <span class="badge badge--sm badge--green"></span>
                             </div>
-                        </div>
-                        <div class="col-12 col-md-6 col-xl-4 d-flex">
-                            <div class="widget">
-                                <div class="widget__wrapper">
-                                    <div class="widget__row">
-                                        <div class="widget__left">
-                                            <h3 class="widget__title">Subscriptions</h3>
-                                            <div class="widget__status-title text-grey">Total visits today</div>
-                                            <div class="widget__trade"><span class="widget__trade-count">1000</span><span class="trade-icon trade-icon--down">
-                            <svg class="icon-icon-trade-down">
-                              <use xlink:href="#icon-trade-down"></use>
-                            </svg></span><span class="badge badge--sm badge--red">3%</span>
-                                            </div>
-                                            <div class="widget__details"><a class="link-under text-grey" href="#">Detail</a>
-                                            </div>
-                                        </div>
-                                        <div class="widget__chart">
-                                            <div class="widget__chart-inner">
-                                                <div class="widget__chart-percentage">75<small>%</small>
-                                                </div>
-                                                <div class="widget__chart-caption">New Orders</div>
-                                            </div>
-                                            <div class="widget__chart-canvas js-progress-circle" data-value="0.75" data-color="#FDBF5E"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6 col-xl-4 d-flex">
-                            <div class="widget">
-                                <div class="widget__wrapper">
-                                    <div class="widget__row">
-                                        <div class="widget__left">
-                                            <h3 class="widget__title">Leads</h3>
-                                            <div class="widget__status-title text-grey">Total visits today</div>
-                                            <div class="widget__trade"><span class="widget__trade-count">$500</span><span class="trade-icon trade-icon--up">
-                            <svg class="icon-icon-trade-up">
-                              <use xlink:href="#icon-trade-up"></use>
-                            </svg></span><span class="badge badge--sm badge--green">9%</span>
-                                            </div>
-                                            <div class="widget__details"><a class="link-under text-grey" href="#">Detail</a>
-                                            </div>
-                                        </div>
-                                        <div class="widget__chart">
-                                            <div class="widget__chart-inner">
-                                                <div class="widget__chart-percentage">80<small>%</small>
-                                                </div>
-                                                <div class="widget__chart-caption">New Sales</div>
-                                            </div>
-                                            <div class="widget__chart-canvas js-progress-circle" data-value="0.8" data-color="#FF3D57"></div>
-                                        </div>
-                                    </div>
+                                <div class="widget__details"><router-link class="link-under text-grey" to="">Detail</router-link>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-             
+
+                <div class="col-md-4 p-2">
+                    <div class="widget">
+                        <div style="height: 130px;" class="widget__wrapper">
+
+                            <div class="">
+                                <h3 class="widget__title">Total Leads</h3>
+                                <div class="widget__status-title text-grey">Total propects</div>
+                                <div class="widget__trade">
+                                <span class="widget__trade-count">3</span>
+                                <span class="trade-icon trade-icon--up">
+                                    <svg class="icon-icon-trade-up">
+                                        <use xlink:href="#icon-trade-up"></use>
+                                    </svg>
+                                </span>
+                                <span class="badge badge--sm badge--green"></span>
+                            </div>
+                                <div class="widget__details"><a class="link-under text-grey">Detail</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="col-md-4 p-2">
+                    <div class="widget">
+                        <div style="height: 130px;" class="widget__wrapper">
+
+                            <div class="">
+                                <h3 class="widget__title">Current Package</h3>
+                                <div class="widget__status-title text-grey">Current Medicsetal Subscription</div>
+                                <div class="widget__trade">
+                                <span class="widget__trade-count">Bronze</span>
+                                <span class="trade-icon trade-icon--up">
+                                    <svg class="icon-icon-trade-up">
+                                        <use xlink:href="#icon-trade-up"></use>
+                                    </svg>
+                                </span>
+                                <span class="badge badge--sm badge--green"></span>
+                            </div>
+                                <div class="widget__details"><a class="link-under text-grey" >Detail</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+           
+
+               
+            </div>
+
+
                 
-          
             </div>
     </div>
 </template>
+
+<script>
+export default {
+    data() {
+        return {
+            businessProfiles: [],
+            userData: []
+        }
+    },
+    methods: {
+        getUserData(){
+            
+
+           this.userData = JSON.parse(localStorage.getItem('user_data'));
+
+        //    alert(this.userData.userFullName)
+        },
+        getBusinessProfiles(){
+            let loader = this.$loading.show({
+                // Optional parameters
+                container: this.fullPage ? null : this.$refs.formContainer,
+                canCancel: true,
+                onCancel: this.onCancel,
+                color: '#6CC3EC',
+            });
+
+            this.axios({
+                method: 'get',
+                url:'https://micro.rtvrs.com.ng/api/BusinessProfiles/KADUNA',
+
+            })
+            .then((response)=>{
+
+                this.businessProfiles = response.data
+                loader.hide()
+            })
+            .catch((response)=>{
+
+                console.log(response)
+                loader.hide()
+            })
+        }
+    },
+    mounted() {
+        this.getBusinessProfiles()
+        this.getUserData()
+    },
+}
+</script>

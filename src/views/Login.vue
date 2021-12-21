@@ -406,10 +406,10 @@
                             <div class="auth-card__logo">
                                 <div class="auth-logo">
                                     <img class="auth-logo__ico" src="https://edu.medicsetal.org/wp-content/uploads/2021/12/medicsetal-logo-2-removebg-preview-296x201.png" style="width: 150px;" alt="#" />
-                                    <div class="auth-logo__text">Medicsetal</div>
+                                    
                                 </div>
                             </div>
-                            <img class="auth-card__bg auth-bg-image-light" src="img/content/auth-bg.jpg" alt="#">
+                            <img class="auth-card__bg auth-bg-image-light" src="https://image.freepik.com/free-photo/drug-prescription-treatment-medication_1150-44091.jpg" alt="#">
                             <img class="auth-card__bg auth-bg-image-dark" src="img/content/auth-bg-dark.jpg" alt="#">
                         </div>
                         <div class="auth-card__right" >

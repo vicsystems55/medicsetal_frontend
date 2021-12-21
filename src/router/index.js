@@ -13,27 +13,30 @@ import ComingSoon from '../views/admin/ComingSoon.vue'
 import Dashboard from '../views/layouts/Dashboard.vue'
 import Fullwidth from '../views/layouts/Fullwidth.vue'
 
-import LGATaxOfficer from '../router/LGATaxOfficer'
+// import LGATaxOfficer from '../router/LGATaxOfficer'
 // import BoardTaxOfficer from '../router/BoardTaxOfficer'
 // import SystemSupport from '../router/SystemSupport'
-import BoardAdmin from '../router/BoardAdmin'
+// import BoardAdmin from '../router/BoardAdmin'
 // import ZonalAdmin from '../router/ZonalAdmin'
 // import AreaAdmin from '../router/AreaAdmin'
 // import Enumerators from '../router/Enumerator'
 import Admin from '../router/Admin'
 
+import User from '../router/User'
+
 // import store from '../store'
 
 const routes = [
 
-  ...LGATaxOfficer,
+  // ...LGATaxOfficer,
   // ...BoardTaxOfficer,
   // ...SystemSupport,
-  ...BoardAdmin,
+  // ...BoardAdmin,
   // ...ZonalAdmin,
   // ...AreaAdmin,
   // ...Enumerators,
   ...Admin,
+  ...User,
 
   {
     path: '/',
