@@ -25,7 +25,7 @@
                                 </div>
                             </div>
                             <img class="auth-card__bg auth-bg-image-light" src="https://image.freepik.com/free-photo/drug-prescription-treatment-medication_1150-44091.jpg" alt="#">
-                            <img class="auth-card__bg auth-bg-image-dark" src="img/content/auth-bg-dark.jpg" alt="#">
+                            <img class="auth-card__bg auth-bg-image-dark" src="https://image.freepik.com/free-photo/drug-prescription-treatment-medication_1150-44091.jpg" alt="#">
                         </div>
                         <div class="auth-card__right" method="POST">
                             <div class="auth-card__top">
