@@ -414,13 +414,13 @@
                                 <div class="auth-md-card__line"></div>
 
                              <div class="col-12 jpa">
-				<input type="tel" class="form-control" maxlength="1">
-				<input type="tel" class="form-control" maxlength="1">
-				<input type="tel" class="form-control" maxlength="1">
-				<input type="tel" class="form-control" maxlength="1">
-				<input type="tel" class="form-control" maxlength="1">
-				<input type="tel" class="form-control" maxlength="1">
-			</div>
+                                <input type="tel" class="form-control" maxlength="1">
+                                <input type="tel" class="form-control" maxlength="1">
+                                <input type="tel" class="form-control" maxlength="1">
+                                <input type="tel" class="form-control" maxlength="1">
+                                <input type="tel" class="form-control" maxlength="1">
+                                <input type="tel" class="form-control" maxlength="1">
+                            </div>
 
                                     
 

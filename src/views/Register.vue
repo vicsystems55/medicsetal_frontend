@@ -183,7 +183,7 @@ export default {
                         });
                        this.axios({
                                 method: "post",
-                                url: 'https://dev.medicsetal.org/api/register',
+                                url: 'https://app.medicsetal.org/api/register',
                                 data: {
                                     name: this.name,
                                     username: this.username,

@@ -538,7 +538,7 @@ export default {
                   
                   this.axios({
                       method: 'post',
-                      url: 'https://micro.rtvrs.com.ng/api/UserLogin',
+                      url: 'https://app.medicsetal.org/api/login',
                        data: {
                             email: this.email,
                             password: this.password
