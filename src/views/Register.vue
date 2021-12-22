@@ -172,7 +172,10 @@ export default {
         },
                 submit() {
 
-
+alert(this.name)
+alert(this.username)
+alert(this.email)
+alert(this.password)
 
                         let loader = this.$loading.show({
                             // Optional parameters
