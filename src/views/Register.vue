@@ -176,6 +176,7 @@ alert(this.name)
 alert(this.username)
 alert(this.email)
 alert(this.password)
+alert(this.referrer_code)
 
                         let loader = this.$loading.show({
                             // Optional parameters

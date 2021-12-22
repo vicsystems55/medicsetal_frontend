@@ -1,4 +1,4 @@
-<template lang="">
+<template >
     <div>
     <svg xmlns="http://www.w3.org/2000/svg" style="border: 0 !important; clip: rect(0 0 0 0) !important; height: 1px !important; margin: -1px !important; overflow: hidden !important; padding: 0 !important; position: absolute !important; width: 1px !important;"
         class="root-svg-symbols-element">
@@ -393,8 +393,8 @@
                     <div class="page-auth__gradient-shape"></div>
                     <div class="page-auth__gradient-shape"></div>
                     <div class="auth-logo">
-                        <img class="auth-logo__icon" src="img/content/logotype.svg" width="44" alt="#" />
-                        <div class="auth-logo__text">arion</div>
+                        <img class="auth-logo__icon" src="https://edu.medicsetal.org/wp-content/uploads/2021/12/medicsetal-logo-2-removebg-preview-296x201.png" width="44" alt="#" />
+                        <div class="auth-logo__text">Medicsetal</div>
                     </div>
                     <div class="page-auth__gradient-column"></div>
                 </div>
@@ -402,7 +402,7 @@
                     <div class="auth-md-card__shape"></div>
                     <div class="auth-md-card__shape"></div>
                     <div class="card__wrapper">
-                        <form method="POST">
+                        <div >
                             <div class="auth-md-card__icon auth-md-card__icon--lock">
                                 <svg width="90" height="121" viewBox="0 0 90 121" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M50.2503 90.0327V101.679C50.2503 104.583 47.9076 106.945 45.0002 106.945C42.093 106.945 39.75 104.583 39.75 101.679V90.0328C37.541 88.4308 36.0005 85.8794 36.0005 82.8498C36.0005 77.8631 40.0248 73.8177 45 73.8177C49.9751 73.8177 54 77.8629 54 82.8496L50.2503 90.0327ZM50.2503 90.0327C52.4581 88.4311 54.0003 85.8798 54 82.8498L50.2503 90.0327ZM73.4997 52.7229V54.2229H74.9997C82.4482 54.2229 88.5002 60.2903 88.5 67.7855V105.445C88.5 112.942 82.4482 119.008 74.9997 119.008H15.0003C7.55018 119.008 1.5 112.942 1.5 105.445V67.7856C1.5 60.2904 7.55018 54.2229 15.0003 54.2229H16.5003V52.7229V30.1274C16.5003 14.3417 29.2932 1.5 45 1.5C60.7113 1.5 73.4997 14.3415 73.4997 30.1274V52.7229ZM58.9993 54.2229C60.38 54.2229 61.4993 53.1036 61.4993 51.7229L61.4991 30.1274C61.4991 20.9932 54.103 13.5634 45 13.5634C35.8929 13.5634 28.5002 20.9933 28.5002 30.1274V51.7229C28.5002 53.1036 29.6195 54.2229 31.0002 54.2229H58.9993Z"
@@ -410,16 +410,33 @@
                                 </svg>
                             </div>
                             <div class="auth-md-card__container">
-                                <h2 class="auth-md-card__title">Enter OTP</h2>
+                                <h2 class="auth-md-card__title">Enter OTP.</h2>
                                 <div class="auth-md-card__line"></div>
 
-                             <div class="col-12 jpa">
-                                <input type="tel" class="form-control" maxlength="1">
-                                <input type="tel" class="form-control" maxlength="1">
-                                <input type="tel" class="form-control" maxlength="1">
-                                <input type="tel" class="form-control" maxlength="1">
-                                <input type="tel" class="form-control" maxlength="1">
-                                <input type="tel" class="form-control" maxlength="1">
+                             <div class="col-12  ">
+                                <input style="letter-spacing: 2em; outine: 0px;" type="text" v-model="digit1" class="form-control text-center" maxlength="6">
+                                
+                            </div>
+                            <div class="row">
+                                <div class="col-2 border border-primary">
+
+                                </div>
+                                 <div class="col-2 border border-primary ">
+
+                                </div>
+                                 <div class="col-2 border border-primary ">
+
+                                </div>
+                                 <div class="col-2 border border-primary ">
+
+                                </div>
+                                 <div class="col-2 border border-primary ">
+
+                                </div>
+                                 <div class="col-2 border border-primary ">
+
+                                </div>
+
                             </div>
 
                                     
@@ -427,13 +444,13 @@
                           
                                     
                                 <div class="auth-md-card__submit">
-                                    <button class="button button--primary button--block" type="button" onclick="javascript:location.href = 'index.html'"><span class="button__text">Reset Password</span>
+                                    <button class="button button--primary button--block" @click="submit()" ><span class="button__text">Verify Email</span>
                                     </button>
                                 </div>
-                                <h5 class="auth-md-card__link"><a class="text-blue" href="auth-login-v2.html">Resend OTP</a>
+                                <h5 class="auth-md-card__link d-none"><a class="text-blue" href="auth-login-v2.html">Resend OTP</a>
                                 </h5>
                             </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -444,30 +461,92 @@
 
 <script>
 
+import { useToast } from 'vue-toastification'
+
+const toast = useToast()
 
 export default {
 
     data() {
         return {
-             fullPage: false
+             fullPage: false,
+             digit1: '',
+             digit2: '',
+             digit3: '',
+             digit4: '',
+             digit5: '',
+             digit6: '',
         }
     },
 
     methods: {
-                    submit() {
+
+            submit() {
+                alert(this.digit1 +''+this.digit2 +''+this.digit3 +''+this.digit4 +''+this.digit5 +''+this.digit6)
+                // alert(this.digit2)
+                //  alert(this.digit1)
+                  
+
+
+
                 let loader = this.$loading.show({
                     // Optional parameters
                     container: this.fullPage ? null : this.$refs.formContainer,
-                    canCancel: true,
+                    canCancel: false,
                     onCancel: this.onCancel,
                     color: '#6CC3EC',
                 });
-                // simulate AJAX
-                setTimeout(() => {
-                    loader.hide()
 
-                    this.$router.push('/user')
-                }, 5000)
+                    this.axios({
+                                method: "post",
+                                url: 'https://app.medicsetal.org/api/verify_otp',
+                                data: {
+                                    otp: this.digit1+this.digit2+this.digit3+this.digit4+this.digit5+this.digit6,
+                                },
+                                    headers: {
+                                    'Access-Control-Allow-Origin': '*',
+                                    'Content-type': 'application/json',
+                                    'Accept': 'application/json',
+                                    'Authorization': 'Bearer ' +localStorage.getItem('user_token')
+                                },
+                                
+                                })
+                                .then( (response) =>{
+                                    //handle success
+
+                                    console.log(response)
+
+                                    localStorage.setItem('user_role', response.data.user_data.role)
+                                    localStorage.setItem('user_token', response.data.access_token)
+                                    localStorage.setItem('user_data', JSON.stringify(response.data.user_data))
+
+                                    
+                                     loader.hide()
+
+                                     toast.success('Email Verified');
+
+                                    return this.$router.push('/user/dashboard')
+
+                                })
+                                .catch( (response)=> {
+
+                                    alert(response);
+                                    //handle error
+                                    console.log(response);
+
+                                   toast.error('Invalid OTP');
+
+                                    loader.hide()
+
+                                });
+            
+
+                // simulate AJAX
+                // setTimeout(() => {
+                //     loader.hide()
+
+                //     this.$router.push('/user')
+                // }, 5000)
             },
             onCancel() {
                 console.log('User cancelled the loader.')
@@ -475,8 +554,6 @@ export default {
 
 
             nextInput(id){
-
-                
 
                 document.getElementById(id).focus();
 
@@ -490,6 +567,18 @@ export default {
 }
 </script>
 
-<style>
+                
+<style scoped>
+.form-control:focus {
+  border-color: transparent;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.form-control {
+  border-color: transparent;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
 
 </style>
