@@ -40,7 +40,7 @@
                                             <use xlink:href="#icon-email-2"></use>
                                         </svg>
                                     </span>
-                                        <input class="input shadow" type="text" v-model="UserFullName" required placeholder="Enter fullname">
+                                        <input class="input shadow" type="text" v-model="name" required placeholder="Enter fullname">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -51,7 +51,7 @@
                                             <use xlink:href="#icon-email-2"></use>
                                         </svg>
                                     </span>
-                                        <input class="input shadow" type="text" placeholder="Create a username" v-model="UserName" required>
+                                        <input class="input shadow" type="text" placeholder="Create a username" v-model="username" required>
                                     </div>
                                 </div>
 
@@ -63,7 +63,7 @@
                                             <use xlink:href="#icon-email-2"></use>
                                         </svg>
                                     </span>
-                                        <input class="input shadow" type="email" placeholder="Supply a valid email" v-model="UserEmail" required>
+                                        <input class="input shadow" type="email" placeholder="Supply a valid email" v-model="email" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -75,7 +75,7 @@
                                             <use xlink:href="#icon-password"></use>
                                         </svg>
                                     </span>
-                                        <input ref="pass" :type="passwordAttribute" class="input shadow"  placeholder="Create a password" v-model="UserPassword" required>
+                                        <input ref="pass" :type="passwordAttribute" class="input shadow"  placeholder="Create a password" v-model="password" required>
                                     </div>
                                 </div>
                                
@@ -99,7 +99,7 @@
                                             <use xlink:href="#icon-password"></use>
                                         </svg>
                                     </span>
-                                        <input class="input shadow" type="text" placeholder="MED1000" v-model="UserPhoneNumber"  required>
+                                        <input class="input shadow" type="text" placeholder="MED1000" v-model="referrer_code"  required>
                                     </div>
                                 </div>
 
