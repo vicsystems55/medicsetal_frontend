@@ -172,11 +172,11 @@ export default {
         },
                 submit() {
 
-alert(this.name)
-alert(this.username)
-alert(this.email)
-alert(this.password)
-alert(this.referrer_code)
+// alert(this.name)
+// alert(this.username)
+// alert(this.email)
+// alert(this.password)
+// alert(this.referrer_code)
 
                         let loader = this.$loading.show({
                             // Optional parameters
@@ -225,7 +225,7 @@ alert(this.referrer_code)
                                 })
                                 .catch( (response)=> {
 
-                                    alert(response);
+                                    // alert(response);
                                     //handle error
                                     console.log(response);
 

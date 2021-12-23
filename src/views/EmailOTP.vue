@@ -471,18 +471,18 @@ export default {
         return {
              fullPage: false,
              digit1: '',
-             digit2: '',
-             digit3: '',
-             digit4: '',
-             digit5: '',
-             digit6: '',
+            //  digit2: '',
+            //  digit3: '',
+            //  digit4: '',
+            //  digit5: '',
+            //  digit6: '',
         }
     },
 
     methods: {
 
             submit() {
-                alert(this.digit1 +''+this.digit2 +''+this.digit3 +''+this.digit4 +''+this.digit5 +''+this.digit6)
+                // alert(this.digit1 +''+this.digit2 +''+this.digit3 +''+this.digit4 +''+this.digit5 +''+this.digit6)
                 // alert(this.digit2)
                 //  alert(this.digit1)
                   
@@ -501,7 +501,7 @@ export default {
                                 method: "post",
                                 url: 'https://app.medicsetal.org/api/verify_otp',
                                 data: {
-                                    otp: this.digit1+this.digit2+this.digit3+this.digit4+this.digit5+this.digit6,
+                                    otp: this.digit1,
                                 },
                                     headers: {
                                     'Access-Control-Allow-Origin': '*',
@@ -513,11 +513,13 @@ export default {
                                 })
                                 .then( (response) =>{
                                     //handle success
+                                    if (response.data.user_data) {
 
+                                        
                                     console.log(response)
 
                                     localStorage.setItem('user_role', response.data.user_data.role)
-                                    localStorage.setItem('user_token', response.data.access_token)
+                                    // localStorage.setItem('user_token', response.data.access_token)
                                     localStorage.setItem('user_data', JSON.stringify(response.data.user_data))
 
                                     
@@ -526,6 +528,16 @@ export default {
                                      toast.success('Email Verified');
 
                                     return this.$router.push('/user/dashboard')
+                                        
+                                    }else{
+
+                                        console.log(response);
+
+                                        toast.error('Invalid OTP');
+
+                                        loader.hide()
+
+                                    }
 
                                 })
                                 .catch( (response)=> {

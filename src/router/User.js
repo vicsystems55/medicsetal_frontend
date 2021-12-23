@@ -1,5 +1,9 @@
 import UserDashboard from '../views/users/Dashboard'
 import UserNotifications from '../views/users/Notifications'
+import UserPackages from '../views/users/Packages.vue'
+import UserPackage from '../views/users/Package.vue'
+import UserLandingPage from '../views/users/LandingPage.vue'
+import SubscriptionSuccess from '../views/users/Success.vue'
 
 import Dashboard from '../views/layouts/Dashboard.vue'
 
@@ -24,6 +28,25 @@ export default [
         {
             path: 'notifications',
             component: UserNotifications
+        },
+        {
+            path: 'packages',
+            component: UserPackages
+        },
+
+        {
+            path: 'package',
+            component: UserPackage
+        },
+
+        {
+            path: 'landing_page',
+            component: UserLandingPage
+        },
+
+        {
+            path: 'success',
+            component: SubscriptionSuccess
         },
 
 

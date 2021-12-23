@@ -27,13 +27,24 @@
                             </li>
 
                             <li class="sidebar__menu-item">
-                            <router-link class="sidebar__link " to="/userx" aria-expanded="true">
+                            <router-link class="sidebar__link " to="/user/packages" aria-expanded="true">
                                 <span class="sidebar__link-icon">
                                         <svg class="icon-icon-dashboard">
                                             <use xlink:href="#icon-dashboard"></use>
                                         </svg>
                                 </span>
                                 <span class="sidebar__link-text">Packages</span>
+                            </router-link>
+                            </li>
+
+                            <li class="sidebar__menu-item">
+                            <router-link class="sidebar__link " to="/userx" aria-expanded="true">
+                                <span class="sidebar__link-icon">
+                                        <svg class="icon-icon-dashboard">
+                                            <use xlink:href="#icon-dashboard"></use>
+                                        </svg>
+                                </span>
+                                <span class="sidebar__link-text">Courses</span>
                             </router-link>
                             </li>
 
@@ -50,7 +61,7 @@
                             </li>
 
                             <li class="sidebar__menu-item">
-                            <router-link class="sidebar__link " to="/userx" aria-expanded="true">
+                            <router-link class="sidebar__link " to="/user/landing_page" aria-expanded="true">
                                 <span class="sidebar__link-icon">
                                         <svg class="icon-icon-dashboard">
                                             <use xlink:href="#icon-dashboard"></use>
