@@ -215,6 +215,11 @@ export default {
             // // ...
             // }
     },
+    mounted() {
+        let r = (Math.random() + 1).toString(36).substring(2);
+        this.reference = r;
+        console.log( this.reference);
+    },
 }
 </script>
 
