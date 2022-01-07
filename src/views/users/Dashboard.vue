@@ -2,12 +2,12 @@
    <div>
          <div class="container">
                 <div class="page-header py-2">
-                    <h1 class="page-header__title">Hi, </h1>
-                    <h6 class="font-italic">Username: </h6>
-                    <h6 class="font-italic">Email: </h6>
+                    <h1 class="page-header__title">Hi, {{userData.name}} </h1>
+                    <h6 class="font-italic">Username: {{userData.username}}</h6>
+                    <h6 class="font-italic">Email: {{userData.email}}</h6>
                 </div>
 
-                 <div class="row">
+            <div class="row">
                 
 
                  <div class="col-md-4 p-2">
@@ -85,6 +85,25 @@
             </div>
 
 
+            <div class="container py-3">
+
+                <div class="bg-white">
+                    <div class="widget-wrappe py-5 px-3">
+                        <h6 class="text-center">Referer Link</h6>
+                        <div class="col-md-6 mx-auto">
+                            <div class="form-group row">
+                                <input type="text" v-model="referrerLink" class="form-control col">
+                                <button class="btn btn-sm btn-primary">copy</button>
+                            </div>
+                            <div class="form-group">
+                                <a target="_blank" class="btn btn-success btn-sm btn-bloc" :href="whatsappLink">whatsapp</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
                 
             </div>
     </div>
@@ -95,7 +114,9 @@ export default {
     data() {
         return {
             businessProfiles: [],
-            userData: []
+            userData: [],
+            referrerLink: '',
+            whatsappLink: '',
         }
     },
     methods: {
@@ -103,6 +124,10 @@ export default {
             
 
            this.userData = JSON.parse(localStorage.getItem('user_data'));
+
+           this.referrerLink = process.env.VUE_APP_URL+'/'+this.userData.username
+
+           this.whatsappLink = "https://api.whatsapp.com/send?phone=8037835670&text=Hello,%20glad%20to%20know%20you%20have%20shown%20interest%20in%20joingin%20Medics%20Et%20Al,%20please%20proceed%20with%20the%20link%20below%20to%20create%20and%20account.%20"+this.referrerLink
 
         //    alert(this.userData.userFullName)
         },
@@ -133,7 +158,7 @@ export default {
         }
     },
     mounted() {
-        this.getBusinessProfiles()
+        // this.getBusinessProfiles()
         this.getUserData()
     },
 }
