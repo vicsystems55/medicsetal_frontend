@@ -558,7 +558,7 @@ export default {
 
                                      if (localStorage.getItem('user_role') == 'user') {
 
-                                         return this.$router.push('/user')
+                                         return this.$router.push('/user/dashboard')
                                          
                                      }if (localStorage.getItem('user_role') == 'admin') {
 
