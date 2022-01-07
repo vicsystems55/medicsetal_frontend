@@ -527,7 +527,7 @@ export default {
 
                                      toast.success('Email Verified');
 
-                                    return this.$router.push('/user/dashboard')
+                                    return this.$router.push('/user')
                                         
                                     }else{
 

@@ -187,7 +187,7 @@ export default {
                         });
                        this.axios({
                                 method: "post",
-                                url: 'https://app.medicsetal.org/api/registerx',
+                                url: process.env.VUE_APP_URL +'/api/registerx',
                                 data: {
                                     name: this.name,
                                     username: this.username,

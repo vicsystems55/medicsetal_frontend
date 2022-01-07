@@ -420,13 +420,13 @@
                             </div>
                             <div class="auth-card__body">
                                 <div class="form-group">
-                                    <label>Username</label>
+                                    <label>Email</label>
                                     <div class="input-group input-group--prepend"><span class="input-group__prepend">
                                     <svg class="icon-icon-user">
                                     <use xlink:href="#icon-user"></use>
                                     </svg>
                                     </span>
-                                        <input class="input shadow" type="text" v-model="username" placeholder="Enter Username" required>
+                                        <input class="input shadow" type="text" v-model="email" placeholder="Enter Username" required>
                                     </div>
                                 </div>
                                 
@@ -526,7 +526,7 @@ export default {
                 let loader = this.$loading.show({
                     // Optional parameters
                     container: this.fullPage ? null : this.$refs.formContainer,
-                    canCancel: true,
+                    canCancel: false,
                     onCancel: this.onCancel,
                     color: '#6CC3EC',
                 });
@@ -538,63 +538,34 @@ export default {
                   
                   this.axios({
                       method: 'post',
-                      url: 'https://app.medicsetal.org/api/login',
+                      url: process.env.VUE_APP_URL+'/api/login',
                        data: {
                             email: this.email,
                             password: this.password
                         },
                   })
                   .then((response)=>{
-                    //   alert(this.username)
-                    //   alert(this.password)
+                                 console.log(response)
 
-                  
-                      this.email = this.username
+                                    localStorage.setItem('user_role', response.data.user_data.role)
+                                    localStorage.setItem('user_token', response.data.access_token)
+                                    localStorage.setItem('user_data', JSON.stringify(response.data.user_data))
 
-                      console.log(response)
-                    if (this.email == 'liyeanthony@gmail.com' && this.password == '08036483438') {
-                
-                        localStorage.setItem('user_role', '5')
-                        localStorage.setItem('user_data', JSON.stringify(response.data))
-                   
-                        loader.hide()
-                        toast.success('Login Successful');
+                                    
+                                    loader.hide()
 
-                     return this.$router.push('/BoardAdmin/Dashboard')
-                     
-                    
-                    }
-                    if (this.email == 'admin@rtvrs.com.ng' && this.password == 'admin@2021') {
-                
-                        localStorage.setItem('user_role', '6')
-                    
-                   
-                        loader.hide()
-                        toast.success('Login Successful');
+                                     toast.success('Login Successful');
 
-                      return this.$router.push('/Admin/Dashboard');
-                     
-                    
-                    }if(response.data.defaultSystemRole == 5){
+                                     if (localStorage.getItem('user_role') == 'user') {
 
-                        // alert('yes state')
-                        localStorage.setItem('user_role', '5')
-                        console.log('here')
-                        localStorage.setItem('user_data', JSON.stringify(response.data))
-                        console.log('there')
-                        
-                        loader.hide()
-                        toast.success('Login Successful');
+                                         return this.$router.push('/user')
+                                         
+                                     }if (localStorage.getItem('user_role') == 'admin') {
 
-                        return this.$router.push('/BoardAdmin/Dashboard')
-                        
-                    }else{
+                                         return this.$router.push('/admin')
+                                         
+                                     }
 
-                        this.$router.push('/login');
-                        toast.error('Invalid Credentials');
-
-                    }
-                        
                     })
                   .catch((response)=>{
                       console.log(response)
