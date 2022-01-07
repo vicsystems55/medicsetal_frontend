@@ -92,8 +92,8 @@
                         <h6 class="text-center">Referer Link</h6>
                         <div class="col-md-6 mx-auto">
                             <div class="form-group row">
-                                <input type="text" v-model="referrerLink" class="form-control col">
-                                <button class="btn btn-sm btn-primary">copy</button>
+                                <input id="code" type="text" v-model="referrerLink" class="form-control col">
+                                <button @click="copy_referrer_code()" class="btn btn-sm btn-secondary">copy</button>
                             </div>
                             <div class="form-group">
                                 <a target="_blank" class="btn btn-success btn-sm btn-bloc" :href="whatsappLink">whatsapp</a>
@@ -110,6 +110,10 @@
 </template>
 
 <script>
+import { useToast } from 'vue-toastification'
+
+const toast = useToast()
+
 export default {
     data() {
         return {
@@ -153,8 +157,17 @@ export default {
             .catch((response)=>{
 
                 console.log(response)
+
                 loader.hide()
             })
+        },
+        copy_referrer_code(){
+            var copyText = document.getElementById("code");
+            copyText.select();
+            copyText.setSelectionRange(0, 99999)
+            document.execCommand("copy");
+            toast.success('Referrer code copied');
+            // alert("Copied the text: " + copyText.value);
         }
     },
     mounted() {

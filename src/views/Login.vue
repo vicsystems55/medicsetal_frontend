@@ -572,38 +572,6 @@ export default {
                   })  
 
 
-
-                // if (this.email == 'admin@rtvrs.com.ng' && this.password == 'admin@2021') {
-                
-                //     localStorage.setItem('user_role', '6')
-                    
-                   
-                //      loader.hide()
-                //      toast.success('Login Successful');
-
-                //       return this.$router.push('/Admin/Dashboard');
-                     
-                    
-                // }if(this.email == 'kadunastate@rtvrs.com.ng' && this.password == 'kadunastate@2021'){
-                //     localStorage.setItem('user_role', '5')
-                //     this.$router.push('/BoardAdmin/Dashboard')
-                //     loader.hide()
-                //     toast.success('Login Successful');
-                    
-                // }else{
-
-                //     this.$router.push('/login');
-                //     toast.error('Invalid Credentials');
-
-                // }
-
-
-                // simulate AJAX
-                // setTimeout(() => {
-                //     loader.hide()
-
-                //     this.$router.push('/userx')
-                // }, 5000)
             },
             onCancel() {
                 console.log('User cancelled the loader.')
