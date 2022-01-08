@@ -2,6 +2,7 @@ import UserDashboard from '../views/users/Dashboard'
 import UserNotifications from '../views/users/Notifications'
 import UserPackages from '../views/users/Packages.vue'
 import UserPackage from '../views/users/Package.vue'
+import UserLeads from '../views/users/MyLeads.vue'
 import UserLandingPage from '../views/users/LandingPage.vue'
 import SubscriptionSuccess from '../views/users/Success.vue'
 
@@ -37,6 +38,11 @@ export default [
         {
             path: 'package',
             component: UserPackage
+        },
+
+        {
+            path: 'leads',
+            component: UserLeads
         },
 
         {
