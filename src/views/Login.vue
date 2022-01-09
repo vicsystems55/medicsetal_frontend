@@ -570,7 +570,7 @@ export default {
                   .catch((response)=>{
                       loader.hide()
 
-                      toast.error('Invalid Login Credentials');
+                      toast.error('Name: '+response.data.name);
 
                       console.log(response)
                   })  

@@ -205,31 +205,49 @@ export default {
                                 .then( (response) =>{
                                     //handle success
 
-                                    console.log(response)
+                                    if (response.data.access_token) {
 
-                                    localStorage.setItem('user_role', response.data.user_data.role)
-                                    localStorage.setItem('user_token', response.data.access_token)
-                                    localStorage.setItem('user_data', JSON.stringify(response.data.user_data))
+                                        localStorage.setItem('user_role', response.data.user_data.role)
+                                        localStorage.setItem('user_token', response.data.access_token)
+                                        localStorage.setItem('user_data', JSON.stringify(response.data.user_data))
 
-                                    
-                                    loader.hide()
+                                        
+                                        loader.hide()
 
-                                     toast.success('Login Successful');
+                                        toast.success('Login Successful');
 
-                                    return this.$router.push('/verify')
+                                        return this.$router.push('/verify')
+
+                                        
+                                    }else{
+
+                                        
+                                        loader.hide()
+                                            console.log(response)
+                                             response.data['name'] ? toast.warning(''+response.data['name']): ''
+                                             response.data['email'] ? toast.warning(''+response.data['email']): ''
+                                             response.data['username'] ? toast.warning(''+response.data['username']): ''
+                                             response.data['referrer_code'] ? toast.warning(''+response.data['referrer_code']): ''
+                                             response.data['password'] ? toast.warning(''+response.data['password']): ''
+
+
+
+
+                                    }
+
+        
+
+                                    // console.log(response.data['name'])
+
+
+                                })
+                                .catch( (responsex)=> {
 
                                    
-
-                                      
-        
-                                })
-                                .catch( (response)=> {
-
-                                    // alert(response);
                                     //handle error
-                                    console.log(response);
+                                    console.log(responsex);
 
-                                   toast.error('Invalid Credentials');
+                                //    toast.error('Name: '+response.data);
 
                                     loader.hide()
 
