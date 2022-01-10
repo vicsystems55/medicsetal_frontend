@@ -77,8 +77,20 @@ const routes = [
 
 
   {
-    path: '/register',
+    path: '/register/:id',
     name: 'Register',
+    component: Fullwidth,
+      children: [
+        {
+          path: '',
+          component: Register,
+        }
+      ]
+  },
+
+  {
+    path: '/register',
+    name: 'Registerx',
     component: Fullwidth,
       children: [
         {
