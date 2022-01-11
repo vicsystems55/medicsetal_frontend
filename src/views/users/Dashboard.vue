@@ -64,7 +64,7 @@
                                 <h3 class="widget__title">Current Package</h3>
                                 <div class="widget__status-title text-grey">Current Medicsetal Subscription</div>
                                 <div class="widget__trade">
-                                <span class="widget__trade-count">Bronze</span>
+                                <span class="widget__trade-count">Pending</span>
                                 <span class="trade-icon trade-icon--up">
                                     <svg class="icon-icon-trade-up">
                                         <use xlink:href="#icon-trade-up"></use>
