@@ -129,7 +129,7 @@ export default {
 
            this.userData = JSON.parse(localStorage.getItem('user_data'));
 
-           this.referrerLink = "dev.medicsetal.org/"+this.userData.username
+           this.referrerLink = "https://app.medicsetal.org/"+this.userData.username
 
            this.whatsappLink = "https://api.whatsapp.com/send?text=Hello,%20glad%20to%20know%20you%20have%20shown%20interest%20in%20joingin%20Medics%20Et%20Al,%20please%20proceed%20with%20the%20link%20below%20to%20create%20and%20account.%20"+this.referrerLink
 

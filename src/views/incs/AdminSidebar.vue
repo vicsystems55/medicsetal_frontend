@@ -43,13 +43,13 @@
                                         </li> -->
 
                             <li class="sidebar__menu-item">
-                                <router-link class="sidebar__link" to='/enumeration' aria-expanded="false">
+                                <router-link class="sidebar__link" to='/admin/members' aria-expanded="false">
                                     <span class="sidebar__link-icon">
                                         <svg class="icon-icon-settings">
                                             <use xlink:href="#icon-settings"></use>
                                         </svg>
                                     </span>
-                                    <span class="sidebar__link-text">Enumeration</span>
+                                    <span class="sidebar__link-text">Members</span>
                                 </router-link>
                             </li>
                             
@@ -76,13 +76,13 @@
                             </li> -->
 
                             <li class="sidebar__menu-item">
-                                <router-link class="sidebar__link" to='/Admin/DemandNotices' aria-expanded="false">
+                                <router-link class="sidebar__link" to='/admin/packages' aria-expanded="false">
                                     <span class="sidebar__link-icon">
                                         <svg class="icon-icon-settings">
                                             <use xlink:href="#icon-settings"></use>
                                         </svg>
                                     </span>
-                                    <span class="sidebar__link-text">Demand Notices</span>
+                                    <span class="sidebar__link-text">Packages</span>
                                 </router-link>
                             </li>
 
@@ -93,7 +93,7 @@
                                             <use xlink:href="#icon-settings"></use>
                                         </svg>
                                     </span>
-                                    <span class="sidebar__link-text">Acknowledgements</span>
+                                    <span class="sidebar__link-text">Subscriptions</span>
                                 </router-link>
                             </li>
                             

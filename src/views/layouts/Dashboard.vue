@@ -569,6 +569,21 @@ export default {
     methods: {
         getUserData(){
              this.userDatax = JSON.parse(localStorage.getItem('user_data'));
+
+             if(this.userDatax.role == 'admin'){
+
+                //  alert('yes admin')
+
+                this.is_admin = true;
+
+                // alert(this.is_admin)
+
+             }else{
+
+                 this.is_admin = false;
+
+                 return this.is_admin
+             }
         },
         logout(){
             alert('loggin out')
