@@ -60,7 +60,10 @@ export default {
                     },
             })
             .then((response)=>{
-                alert('hello')
+
+                // alert('hello')
+                
+                this.leads = response.data.leads
                 console.log(response)
 
 
