@@ -10,7 +10,7 @@
             <div class="row">
                 
 
-                 <div class="col-md-4 p-2">
+                 <div class="col-md-4 p-2 d-none">
                     <div class="widget">
                         <div style="height: 130px;" class="widget__wrapper">
 
