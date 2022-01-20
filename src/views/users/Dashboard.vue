@@ -130,12 +130,25 @@ export default {
         shareMe(){
             alert('share')
 
-            if (navigator.share !== undefined) {
+            if (navigator.canShare && navigator.canShare({ files: [] })) {
                 navigator.share({
-                    title: 'me',
-                    url  : 'https://medicsetal.org/wp-content/uploads/2021/12/medicsetal-logo-2-removebg-preview-e1640081402491.png'
-                });
-            }
+                    files: [],
+                    title: 'Pictures',
+                    text: 'Our Pictures.',
+                     url  : 'https://medicsetal.org/wp-content/uploads/2021/12/medicsetal-logo-2-removebg-preview-e1640081402491.png'
+                })
+                .then(() => alert('Share was successful.'))
+                .catch((error) => alert('Sharing failed', error));
+                } else {
+                alert(`Your system doesn't support sharing files.`);
+                }
+
+            // if (navigator.share !== undefined) {
+            //     navigator.share({
+            //         title: 'me',
+            //         url  : 'https://medicsetal.org/wp-content/uploads/2021/12/medicsetal-logo-2-removebg-preview-e1640081402491.png'
+            //     });
+            // }
         },
         getUserData(){
             
