@@ -64,7 +64,7 @@
                                 <h3 class="widget__title">Current Package</h3>
                                 <div class="widget__status-title text-grey">Current Medicsetal Subscription</div>
                                 <div class="widget__trade">
-                                <span class="widget__trade-count">Pending</span>
+                                <span class="widget__trade-count">Bronze</span>
                                 <span class="trade-icon trade-icon--up">
                                     <svg class="icon-icon-trade-up">
                                         <use xlink:href="#icon-trade-up"></use>
@@ -130,17 +130,12 @@ export default {
         shareMe(){
             alert('share')
 
-            if (navigator.canShare && navigator.canShare({ files: filesArray })) {
-                    navigator.share({
-                        files: filesArray,
-                        title: 'Pictures',
-                        text: 'Our Pictures.',
-                    })
-                    .then(() => console.log('Share was successful.'))
-                    .catch((error) => console.log('Sharing failed', error));
-                    } else {
-                    console.log(`Your system doesn't support sharing files.`);
-                    }
+            if (navigator.share !== undefined) {
+                navigator.share({
+                    title: 'me',
+                    url  : 'https://player.vimeo.com/video/665066889?h=92a31a9029'
+                });
+            }
         },
         getUserData(){
             
