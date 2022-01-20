@@ -97,7 +97,7 @@
                             </div>
                             <div class="form-group">
                                 <iframe src="https://player.vimeo.com/video/665066889?h=92a31a9029" width="100%" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-                                <a target="_blank" class="btn btn-success btn-sm btn-bloc d-none" :href="whatsappLink">whatsapp</a>
+                                <a target="_blank" class="btn btn-success btn-sm btn-bloc " :href="whatsappLink">whatsapp</a>
                                 <button @click="shareMe()" class="btn btn-primary">Share</button>
                             </div>
                         </div>
@@ -130,12 +130,17 @@ export default {
         shareMe(){
             alert('share')
 
-            if (navigator.share !== undefined) {
-                navigator.share({
-                    title: 'me',
-                    url  : 'https://player.vimeo.com/video/665066889?h=92a31a9029'
-                });
-            }
+            if (navigator.canShare && navigator.canShare({ files: filesArray })) {
+                    navigator.share({
+                        files: filesArray,
+                        title: 'Pictures',
+                        text: 'Our Pictures.',
+                    })
+                    .then(() => console.log('Share was successful.'))
+                    .catch((error) => console.log('Sharing failed', error));
+                    } else {
+                    console.log(`Your system doesn't support sharing files.`);
+                    }
         },
         getUserData(){
             
