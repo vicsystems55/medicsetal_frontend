@@ -133,7 +133,7 @@ export default {
             if (navigator.share !== undefined) {
                 navigator.share({
                     title: 'me',
-                    url  : 'https://player.vimeo.com/video/665066889?h=92a31a9029'
+                    url  : 'https://medicsetal.org/wp-content/uploads/2021/12/medicsetal-logo-2-removebg-preview-e1640081402491.png'
                 });
             }
         },
