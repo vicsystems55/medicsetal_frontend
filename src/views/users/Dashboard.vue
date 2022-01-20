@@ -96,6 +96,7 @@
                                 <button @click="copy_referrer_code()" class="btn btn-sm btn-secondary">copy</button>
                             </div>
                             <div class="form-group">
+                                <iframe src="https://player.vimeo.com/video/665066889?h=92a31a9029" width="100%" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
                                 <a target="_blank" class="btn btn-success btn-sm btn-bloc" :href="whatsappLink">whatsapp</a>
                             </div>
                         </div>
@@ -129,7 +130,7 @@ export default {
 
            this.userData = JSON.parse(localStorage.getItem('user_data'));
 
-           this.referrerLink = "https://app.medicsetal.org/"+this.userData.username
+           this.referrerLink = "https://app.medicsetal.org/m/"+this.userData.username
 
            this.whatsappLink = "https://api.whatsapp.com/send?text=Hello,%20glad%20to%20know%20you%20have%20shown%20interest%20in%20joingin%20Medics%20Et%20Al,%20please%20proceed%20with%20the%20link%20below%20to%20create%20and%20account.%20"+this.referrerLink
 
