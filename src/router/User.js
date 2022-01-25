@@ -6,6 +6,7 @@ import UserLeads from '../views/users/MyLeads.vue'
 import UserLandingPage from '../views/users/LandingPage.vue'
 import SubscriptionSuccess from '../views/users/Success.vue'
 import UserResources from '../views/users/UserResources.vue'
+import UserCourseDetails from '../views/users/UserCourseDetails.vue'
 
 import Dashboard from '../views/layouts/Dashboard.vue'
 
@@ -44,6 +45,12 @@ export default [
         {
             path: 'resources',
             component: UserResources
+        },
+
+        {
+            path: 'course-details/:id',
+            name: 'course-details',
+            component: UserCourseDetails
         },
 
         {

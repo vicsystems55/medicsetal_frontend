@@ -16,10 +16,13 @@
                                 <!-- <iframe  src="https://player.vimeo.com/video/665066889?h=92a31a9029" width="100%" height="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe> -->
                         
                             </div>
-                            <div class="p-2">
-                                <h4>{{bronze_course.title}}</h4>
-                                <h6>Package: {{bronze_course.package.name}}</h6>
-                            </div>
+                         
+                              <router-link  :to="{name:'course-details',params:{id:bronze_course.id} }">
+                                <div  class="p-2">
+                                    <h4>{{bronze_course.title}}</h4>
+                                    <h6>Package: {{bronze_course.package.name}}</h6>
+                                </div>
+                            </router-link>
                         </div>
                     </div>
                 </div>
