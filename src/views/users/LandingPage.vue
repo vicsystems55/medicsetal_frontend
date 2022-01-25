@@ -9,7 +9,7 @@
 
 
         <div class="container">
-            <embed onclick="event.preventDefault(); return false;" type="text/html" src="https://app.medicsetal.org/sylvia"  style="width: 100%; height: 100vh;">
+            <embed onclick="event.preventDefault(); return false;" type="text/html" src="https://app.medicsetal.org/m/sylvia"  style="width: 100%; height: 100vh;">
         </div>
     </div>
 </template>

@@ -1,0 +1,302 @@
+<template>
+    <div>
+         <div class="container">
+                <div class="page-header mb-5">
+                    <h1 class="page-header__title">Medics Et Al Courses</h1>
+                </div>
+
+                <h6>Bronze Package</h6>
+
+                <hr class="">
+
+                <div class="row">
+                    <div v-for="bronze_course in bronze_courses" :key="bronze_course.index" class="col-md-4">
+                        <div  style="height: 350px;" class="shadow mb-3">
+                            <div class="videoWrapper bg-primary shadow border border-success">
+                                <!-- <iframe  src="https://player.vimeo.com/video/665066889?h=92a31a9029" width="100%" height="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe> -->
+                        
+                            </div>
+                            <div class="p-2">
+                                <h4>{{bronze_course.title}}</h4>
+                                <h6>Package: {{bronze_course.package.name}}</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <h6>Silver Package</h6>
+
+                <hr class="">
+
+                <div class="row">
+                    <div v-for="silver_course in silver_courses" :key="silver_course.index" class="col-md-4">
+                        <div  style="height: 350px;" class="shadow mb-3">
+                            <div class="videoWrapper bg-primary shadow border border-success">
+                                <!-- <iframe  src="https://player.vimeo.com/video/665066889?h=92a31a9029" width="100%" height="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe> -->
+                        
+                            </div>
+                            <div class="p-2">
+                                <h4>{{silver_course.title}}</h4>
+                                <h6>Package: {{silver_course.package.name}}</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h6>Gold Package</h6>
+
+                <hr class="">
+
+                <div class="row">
+                    <div v-for="gold_course in gold_courses" :key="gold_course.index" class="col-md-4">
+                        <div  style="height: 350px;" class="shadow mb-3">
+                            <div class="videoWrapper bg-primary shadow border border-success">
+                                <!-- <iframe  src="https://player.vimeo.com/video/665066889?h=92a31a9029" width="100%" height="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe> -->
+                        
+                            </div>
+                            <div class="p-2">
+                                <h4>{{gold_course.title}}</h4>
+                                <h6>Package: {{gold_course.package.name}}</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            <h6>Diamond Package</h6>
+
+                <hr class="">
+
+                <div class="row">
+                    <div v-for="diamond_course in diamond_courses" :key="diamond_course.index" class="col-md-4">
+                        <div  style="height: 350px;" class="shadow mb-3">
+                            <div class="videoWrapper bg-primary shadow border border-success">
+                                <!-- <iframe  src="https://player.vimeo.com/video/665066889?h=92a31a9029" width="100%" height="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe> -->
+                        
+                            </div>
+                            <div class="p-2">
+                                <h4>{{diamond_course.title}}</h4>
+                                <h6>Package: {{diamond_course.package.name}}</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                  
+                
+            </div>
+
+
+
+
+            
+    </div>
+</template>
+
+<script>
+
+import { useToast } from 'vue-toastification'
+
+const toast = useToast()
+
+
+export default {
+
+    data() {
+        return {
+             fullPage: false,
+             state_code: '',
+             business_name: '',
+             bronze_courses: [],
+             silver_courses: [],
+             gold_courses: [],
+             diamond_courses: [],
+        }
+    },
+
+    methods: {
+
+            get_bronze_courses (){
+
+                                let loader = this.$loading.show({
+                    // Optional parameters
+                    container: this.fullPage ? null : this.$refs.formContainer,
+                    canCancel: false,
+                    onCancel: this.onCancel,
+                    color: '#6CC3EC',
+                });
+
+                this.axios({
+                        method: 'post',
+                        url: process.env.VUE_APP_URL+'/api/courses',
+                        data: {
+                            category: '1'
+                        }
+                        // headers: {
+                        //     'Access-Control-Allow-Origin': '*',
+                        //     'Content-type': 'application/json',
+                        //     'Accept': 'application/json',
+                        //     'Authorization': 'Bearer ' +localStorage.getItem('user_token')
+                        // },
+                })
+                .then((response)=>{
+
+                    // alert('hello')
+                    
+                    this.bronze_courses = response.data
+                    console.log(this.bronze_courses)
+
+                     loader.hide()
+
+
+                })
+                .catch((response)=>{
+                    console.log(response)
+                })
+            },
+
+            get_silver_courses (){
+
+                                let loader = this.$loading.show({
+                    // Optional parameters
+                    container: this.fullPage ? null : this.$refs.formContainer,
+                    canCancel: false,
+                    onCancel: this.onCancel,
+                    color: '#6CC3EC',
+                });
+
+                this.axios({
+                        method: 'post',
+                        url: process.env.VUE_APP_URL+'/api/courses',
+                        data: {
+                            category: '2'
+                        }
+                        // headers: {
+                        //     'Access-Control-Allow-Origin': '*',
+                        //     'Content-type': 'application/json',
+                        //     'Accept': 'application/json',
+                        //     'Authorization': 'Bearer ' +localStorage.getItem('user_token')
+                        // },
+                })
+                .then((response)=>{
+
+                    // alert('hello')
+                    
+                    this.silver_courses = response.data
+                    console.log(this.silver_courses)
+
+                     loader.hide()
+
+
+                })
+                .catch((response)=>{
+                    console.log(response)
+                })
+            },
+
+            get_gold_courses (){
+
+                                let loader = this.$loading.show({
+                    // Optional parameters
+                    container: this.fullPage ? null : this.$refs.formContainer,
+                    canCancel: false,
+                    onCancel: this.onCancel,
+                    color: '#6CC3EC',
+                });
+
+                this.axios({
+                        method: 'post',
+                        url: process.env.VUE_APP_URL+'/api/courses',
+                        data: {
+                            category: '3'
+                        }
+                        // headers: {
+                        //     'Access-Control-Allow-Origin': '*',
+                        //     'Content-type': 'application/json',
+                        //     'Accept': 'application/json',
+                        //     'Authorization': 'Bearer ' +localStorage.getItem('user_token')
+                        // },
+                })
+                .then((response)=>{
+
+                    // alert('hello')
+                    
+                    this.gold_courses = response.data
+                    console.log(this.gold_courses)
+
+                     loader.hide()
+
+
+                })
+                .catch((response)=>{
+                    console.log(response)
+                })
+            },
+
+            get_diamond_courses (){
+
+                                let loader = this.$loading.show({
+                    // Optional parameters
+                    container: this.fullPage ? null : this.$refs.formContainer,
+                    canCancel: false,
+                    onCancel: this.onCancel,
+                    color: '#6CC3EC',
+                });
+
+                this.axios({
+                        method: 'post',
+                        url: process.env.VUE_APP_URL+'/api/courses',
+                        data: {
+                            category: '4'
+                        }
+                        // headers: {
+                        //     'Access-Control-Allow-Origin': '*',
+                        //     'Content-type': 'application/json',
+                        //     'Accept': 'application/json',
+                        //     'Authorization': 'Bearer ' +localStorage.getItem('user_token')
+                        // },
+                })
+                .then((response)=>{
+
+                    // alert('hello')
+                    
+                    this.diamond_courses = response.data
+                    console.log(this.diamond_courses)
+
+                     loader.hide()
+
+
+                })
+                .catch((response)=>{
+                    console.log(response)
+                })
+            },
+                
+ 
+    },
+    mounted() {
+        this.get_bronze_courses()
+        this.get_silver_courses()
+        this.get_gold_courses()
+        this.get_diamond_courses()
+    },
+    
+}
+</script>
+
+<style scoped>
+    .videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+}
+.videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+</style>

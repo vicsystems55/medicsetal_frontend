@@ -5,6 +5,7 @@ import UserPackage from '../views/users/Package.vue'
 import UserLeads from '../views/users/MyLeads.vue'
 import UserLandingPage from '../views/users/LandingPage.vue'
 import SubscriptionSuccess from '../views/users/Success.vue'
+import UserResources from '../views/users/UserResources.vue'
 
 import Dashboard from '../views/layouts/Dashboard.vue'
 
@@ -38,6 +39,11 @@ export default [
         {
             path: 'package',
             component: UserPackage
+        },
+
+        {
+            path: 'resources',
+            component: UserResources
         },
 
         {

@@ -64,7 +64,8 @@
                                 <h3 class="widget__title">Current Package</h3>
                                 <div class="widget__status-title text-grey">Current Medicsetal Subscription</div>
                                 <div class="widget__trade">
-                                <span class="widget__trade-count">Bronze</span>
+                                    <img class="float-right" style="height: 90px;" v-bind:src="package_image"  alt=""> <br>
+                                <span class="widget__trade-count ">{{user_subscription.name??'No Subscription Yet!!'}}</span>
                                 <span class="trade-icon trade-icon--up">
                                     <svg class="icon-icon-trade-up">
                                         <use xlink:href="#icon-trade-up"></use>
@@ -72,7 +73,7 @@
                                 </span>
                                 <span class="badge badge--sm badge--green"></span>
                             </div>
-                                <div class="widget__details"><a class="link-under text-grey" >Detail</a>
+                                <div class="widget__details"><a class="link-under text-grey d-none" >Detail</a>
                                 </div>
                             </div>
                         </div>
@@ -123,6 +124,8 @@ export default {
             userData: [],
             referrerLink: '',
             whatsappLink: '',
+            user_subscription: [],
+            package_image: ''
         }
     },
     methods: {
@@ -130,18 +133,23 @@ export default {
         shareMe(){
             alert('share')
 
-            if (navigator.canShare && navigator.canShare({ files: [] })) {
-                navigator.share({
-                    files: [],
-                    title: 'Pictures',
-                    text: 'Our Pictures.',
-                     url  : 'https://medicsetal.org/wp-content/uploads/2021/12/medicsetal-logo-2-removebg-preview-e1640081402491.png'
-                })
-                .then(() => alert('Share was successful.'))
-                .catch((error) => alert('Sharing failed', error));
-                } else {
-                alert(`Your system doesn't support sharing files.`);
-                }
+
+            var file = new File();
+
+            console.log(file)
+
+            // if (navigator.canShare && navigator.canShare({ files: [] })) {
+            //     navigator.share({
+            //         files: [],
+            //         title: 'Pictures',
+            //         text: 'Our Pictures.',
+            //          url  : 'https://medicsetal.org/wp-content/uploads/2021/12/medicsetal-logo-2-removebg-preview-e1640081402491.png'
+            //     })
+            //     .then(() => alert('Share was successful.'))
+            //     .catch((error) => alert('Sharing failed', error));
+            //     } else {
+            //     alert(`Your system doesn't support sharing files.`);
+            //     }
 
             // if (navigator.share !== undefined) {
             //     navigator.share({
@@ -161,30 +169,39 @@ export default {
 
         //    alert(this.userData.userFullName)
         },
-        getBusinessProfiles(){
-            let loader = this.$loading.show({
-                // Optional parameters
-                container: this.fullPage ? null : this.$refs.formContainer,
-                canCancel: true,
-                onCancel: this.onCancel,
-                color: '#6CC3EC',
-            });
+        get_user_stats(){
+            // let loader = this.$loading.show({
+            //     // Optional parameters
+            //     container: this.fullPage ? null : this.$refs.formContainer,
+            //     canCancel: true,
+            //     onCancel: this.onCancel,
+            //     color: '#6CC3EC',
+            // });
 
             this.axios({
-                method: 'get',
-                url:'https://micro.rtvrs.com.ng/api/BusinessProfiles/KADUNA',
+                method: 'post',
+                url: process.env.VUE_APP_URL +'/api/user_stats',
+                headers: {
+                    'Access-Control-Allow-Origin': '*',
+                    'Content-type': 'application/json',
+                    'Accept': 'application/json',
+                    'Authorization': 'Bearer ' +localStorage.getItem('user_token')
+                },
 
             })
             .then((response)=>{
 
-                this.businessProfiles = response.data
-                loader.hide()
+               console.log(response.data.user_data.subscription.package)
+
+                this.user_subscription = response.data.user_data.subscription.package
+                this.package_image = response.data.user_data.subscription.package.featured_image
+                // loader.hide()
             })
             .catch((response)=>{
 
                 console.log(response)
 
-                loader.hide()
+                // loader.hide()
             })
         },
         copy_referrer_code(){
@@ -197,7 +214,7 @@ export default {
         }
     },
     mounted() {
-        // this.getBusinessProfiles()
+        this.get_user_stats()
         this.getUserData()
     },
 }

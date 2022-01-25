@@ -38,14 +38,14 @@
                             </li>
 
                             <li class="sidebar__menu-item">
-                            <a class="sidebar__link " target="_blank"  href="https://edu.medicsetal.org" aria-expanded="true">
+                            <router-link class="sidebar__link " target="_blank" to="/user/resources" aria-expanded="true">
                                 <span class="sidebar__link-icon">
                                         <svg class="icon-icon-dashboard">
                                             <use xlink:href="#icon-dashboard"></use>
                                         </svg>
                                 </span>
                                 <span class="sidebar__link-text">Courses</span>
-                            </a>
+                            </router-link>
                             </li>
 
                             
