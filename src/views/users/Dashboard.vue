@@ -141,8 +141,8 @@ export default {
 
                 const shareData = {
                 title: '',
-                text: 'Hello, glad to know you have shown interest in joining Medics Et Al '+this.referrerLink +'  ',
-                url: 'https://vimeo.com/665066889'
+                text: 'Hello, glad to know you have shown interest in joining Medics Et Al '+this.salespagelink +'  ',
+                url: 'https://app.medicsetal.org/health_education.mp4'
                 }
 
                 // const btn = document.querySelector('button');
