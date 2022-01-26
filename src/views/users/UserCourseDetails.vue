@@ -2,7 +2,7 @@
     <div>
          <div class="container">
                 <div class="page-header">
-                    <h1 class="page-header__title">Course Title</h1>
+                    <h1 class="page-header__title">{{course_details.title}}</h1>
                 </div>
                 
             </div>

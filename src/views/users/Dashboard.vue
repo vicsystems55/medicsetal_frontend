@@ -90,16 +90,21 @@
 
                 <div class="bg-white">
                     <div class="widget-wrappe py-5 px-3">
-                        <h6 class="text-center">Referer Link</h6>
+                        <h6 class="text-center">Sales page Link</h6>
                         <div class="col-md-6 mx-auto">
+                            <div class="form-group row">
+                                <input id="code" type="text" v-model="salespagelink" class="form-control col">
+                                <button @click="copy_referrer_code()" class="btn btn-sm btn-secondary">copy</button>
+                            </div>
+                            <h6 class="text-center">Referral Link</h6>
                             <div class="form-group row">
                                 <input id="code" type="text" v-model="referrerLink" class="form-control col">
                                 <button @click="copy_referrer_code()" class="btn btn-sm btn-secondary">copy</button>
                             </div>
                             <div class="form-group">
-                                <iframe src="https://player.vimeo.com/video/665066889?h=92a31a9029" width="100%" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-                                <a target="_blank" class="btn btn-success btn-sm btn-bloc " :href="whatsappLink">whatsapp</a>
-                                <button @click="shareMe()" class="btn btn-primary">Share</button>
+                                <iframe src="https://player.vimeo.com/video/665066889?h=92a31a9029" width="640" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                                <a target="_blank" class="btn btn-success btn-sm btn-block " :href="whatsappLink">Share on Whatsapp</a> <br>
+                                <button @click="shareMe()" class="btn btn-sm btn-primary btn-block">Share on Social Media</button>
                             </div>
                         </div>
                     </div>
@@ -123,6 +128,7 @@ export default {
             businessProfiles: [],
             userData: [],
             referrerLink: '',
+            salespagelink: '',
             whatsappLink: '',
             user_subscription: [],
             package_image: ''
@@ -133,39 +139,35 @@ export default {
         shareMe(){
             alert('share')
 
+                const shareData = {
+                title: 'Health Education by Medics Et Al',
+                text: '',
+                url: 'https://player.vimeo.com/video/665066889?h=92a31a9029'
+                }
 
-            var file = new File();
+                // const btn = document.querySelector('button');
+                // const resultPara = document.querySelector('.result');
 
-            console.log(file)
-
-            // if (navigator.canShare && navigator.canShare({ files: [] })) {
-            //     navigator.share({
-            //         files: [],
-            //         title: 'Pictures',
-            //         text: 'Our Pictures.',
-            //          url  : 'https://medicsetal.org/wp-content/uploads/2021/12/medicsetal-logo-2-removebg-preview-e1640081402491.png'
-            //     })
-            //     .then(() => alert('Share was successful.'))
-            //     .catch((error) => alert('Sharing failed', error));
-            //     } else {
-            //     alert(`Your system doesn't support sharing files.`);
-            //     }
-
-            // if (navigator.share !== undefined) {
-            //     navigator.share({
-            //         title: 'me',
-            //         url  : 'https://medicsetal.org/wp-content/uploads/2021/12/medicsetal-logo-2-removebg-preview-e1640081402491.png'
-            //     });
-            // }
+                // Share must be triggered by "user activation"
+               
+                try {
+                    navigator.share(shareData)
+                    resultPara.textContent = 'MDN shared successfully'
+                } catch(err) {
+                    resultPara.textContent = 'Error: ' + err
+                }
+               
         },
         getUserData(){
             
 
            this.userData = JSON.parse(localStorage.getItem('user_data'));
 
-           this.referrerLink = "https://app.medicsetal.org/m/"+this.userData.username
+           this.referrerLink = "https://affiliate.medicsetal.org/#/register/"+this.userData.usercode
 
-           this.whatsappLink = "https://api.whatsapp.com/send?text=Hello,%20glad%20to%20know%20you%20have%20shown%20interest%20in%20joingin%20Medics%20Et%20Al,%20please%20proceed%20with%20the%20link%20below%20to%20create%20and%20account.%20"+this.referrerLink
+           this.salespagelink = "https://app.medicsetal.org/m/"+this.userData.username
+
+           this.whatsappLink = "https://api.whatsapp.com/send?text=Hello,%20glad%20to%20know%20you%20have%20shown%20interest%20in%20joining%20Medics%20Et%20Al,%20please%20proceed%20with%20the%20link%20below%20to%20create%20and%20account.%20"+this.referrerLink
 
         //    alert(this.userData.userFullName)
         },

@@ -5,7 +5,7 @@
             <div class="p-5"></div>
                         <ul class="sidebar__menu">
                             <li class="sidebar__menu-item active">
-                            <router-link class="sidebar__link active" to="/user" aria-expanded="true">
+                            <router-link class="sidebar__link active" to="/user/dashboard" aria-expanded="true">
                                 <span class="sidebar__link-icon">
                                         <svg class="icon-icon-person">
                                             <use xlink:href="#icon-person"></use>
@@ -16,7 +16,7 @@
                             </li>
 
                             <li class="sidebar__menu-item">
-                            <router-link class="sidebar__link " to="/userx" aria-expanded="true">
+                            <router-link class="sidebar__link " to="/user/dashboard" aria-expanded="true">
                                 <span class="sidebar__link-icon">
                                         <svg class="icon-icon-dashboard">
                                             <use xlink:href="#icon-dashboard"></use>
@@ -57,6 +57,17 @@
                                         </svg>
                                 </span>
                                 <span class="sidebar__link-text">My Leads</span>
+                            </router-link>
+                            </li>
+
+                            <li class="sidebar__menu-item">
+                            <router-link class="sidebar__link " to="/user/leads" aria-expanded="true">
+                                <span class="sidebar__link-icon">
+                                        <svg class="icon-icon-dashboard">
+                                            <use xlink:href="#icon-dashboard"></use>
+                                        </svg>
+                                </span>
+                                <span class="sidebar__link-text">My Downlines</span>
                             </router-link>
                             </li>
 

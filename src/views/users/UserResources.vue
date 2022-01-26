@@ -5,7 +5,9 @@
                     <h1 class="page-header__title">Medics Et Al Courses</h1>
                 </div>
 
-                <h6>Bronze Package</h6>
+                <div class="c  shadow p-3 bg-warning">
+                    <h4 class="text-dark text-center ">Bronze Package</h4>
+                </div>
 
                 <hr class="">
 
@@ -13,7 +15,7 @@
                     <div v-for="bronze_course in bronze_courses" :key="bronze_course.index" class="col-md-4">
                         <div  style="height: 350px;" class="shadow mb-3">
                             <div class="videoWrapper bg-primary shadow border border-success">
-                                <!-- <iframe  src="https://player.vimeo.com/video/665066889?h=92a31a9029" width="100%" height="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe> -->
+                                <iframe  src="https://player.vimeo.com/video/665066889?h=92a31a9029" width="100%" height="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
                         
                             </div>
                          
