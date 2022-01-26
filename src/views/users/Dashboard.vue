@@ -141,7 +141,7 @@ export default {
 
                 const shareData = {
                 title: 'Health Education by Medics Et Al',
-                text: '',
+                text: 'Hello, glad to know you have shown interest in joining Medics Et Al',
                 url: 'https://player.vimeo.com/video/665066889?h=92a31a9029'
                 }
 
