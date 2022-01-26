@@ -142,7 +142,7 @@ export default {
                 const shareData = {
                 title: '',
                 text: 'Hello, glad to know you have shown interest in joining Medics Et Al',
-                url: 'https://player.vimeo.com/video/665066889'
+                url: 'https://www.youtube.com/watch?v=6FAfYHKBRx8'
                 }
 
                 // const btn = document.querySelector('button');
