@@ -140,9 +140,9 @@ export default {
             alert('share')
 
                 const shareData = {
-                title: '',
+                title: 'Health Education from Medics Et Al',
                 text: 'Hello, glad to know you have shown interest in joining Medics Et Al '+this.salespagelink +'  ',
-                url: 'https://app.medicsetal.org/health_education.mp4'
+                url: 'https://vimeo.com/665066889/92a31a9029'
                 }
 
                 // const btn = document.querySelector('button');
