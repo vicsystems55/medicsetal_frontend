@@ -15,7 +15,7 @@
                     <div v-for="bronze_course in bronze_courses" :key="bronze_course.index" class="col-md-4">
                         <div  style="height: 350px;" class="shadow mb-3">
                             <div class="videoWrapper bg-primary shadow border border-success">
-                                <iframe  src="https://player.vimeo.com/video/665066889?h=92a31a9029" width="100%" height="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                                <iframe  :src="getVideoUrl(bronze_course.video_url)" width="100%" height="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
                         
                             </div>
                          
@@ -123,6 +123,10 @@ export default {
 
     methods: {
 
+          getVideoUrl(url) {
+                // var images = require.context('../assets/', false, /\.png$/)
+                return url
+            },
             get_bronze_courses (){
 
                                 let loader = this.$loading.show({
