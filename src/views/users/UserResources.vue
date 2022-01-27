@@ -11,9 +11,22 @@
 
                 <hr class="">
 
-                <div class="row">
+                <div class="row ">
+                    
                     <div v-for="bronze_course in bronze_courses" :key="bronze_course.index" class="col-md-4">
-                        <div  style="height: 350px;" class="shadow mb-3">
+                        
+                        <div  style="height: 350px; position: relative;" class="shadow mb-3 ml-2">
+                            <div v-if="!bronze_access" class="blocked text-center text-white">
+                          
+                                <img class="text-center" style="height: 200px;" src="/img/lock.png" alt="">
+                                <h6 class="text-white">YOU ARE NOT ON THIS PACKAGE </h6>
+
+                                    <router-link :to="{name:'package-details',params:{id:bronze_course.package_id} }" class="btn btn-primary">
+                                   UPGRADE
+                                 
+                                    </router-link>
+
+                            </div>
                             <div class="videoWrapper bg-primary shadow border border-success">
                                 <iframe  :src="getVideoUrl(bronze_course.video_url)" width="100%" height="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
                         
@@ -124,6 +137,16 @@ export default {
              silver_courses: [],
              gold_courses: [],
              diamond_courses: [],
+             user_subscription: [],
+             package_image: '',
+
+             bronze_access: false,
+             gold_access: false,
+             silver_access:false,
+             diamond_access: false,
+
+
+
         }
     },
 
@@ -158,9 +181,17 @@ export default {
                 })
                 .then((response)=>{
 
-                    // alert('hello')
-                    
+                    // alert(this.user_subscription.id)
+
+            
                     this.bronze_courses = response.data
+
+                    //  alert(this.bronze_courses[0].package_id)
+
+                        if (this.user_subscription.id >= this.bronze_courses[0].package.id) {
+                            this.bronze_access = true;
+                        }
+
                     console.log(this.bronze_courses)
 
                      loader.hide()
@@ -288,14 +319,56 @@ export default {
                     console.log(response)
                 })
             },
+
+
+
+            get_user_stats(){
+            // let loader = this.$loading.show({
+            //     // Optional parameters
+            //     container: this.fullPage ? null : this.$refs.formContainer,
+            //     canCancel: true,
+            //     onCancel: this.onCancel,
+            //     color: '#6CC3EC',
+            // });
+
+            this.axios({
+                method: 'post',
+                url: process.env.VUE_APP_URL +'/api/user_stats',
+                headers: {
+                    'Access-Control-Allow-Origin': '*',
+                    'Content-type': 'application/json',
+                    'Accept': 'application/json',
+                    'Authorization': 'Bearer ' +localStorage.getItem('user_token')
+                },
+
+            })
+            .then((response)=>{
+
+               console.log(response)
+
+                this.user_subscription = response.data.user_data.subscription.package
+                this.package_image = response.data.user_data.subscription.package.featured_image
+                this.no_leads = response.data.no_leads
+                // loader.hide()
+            })
+            .catch((response)=>{
+
+                console.log(response)
+
+                // loader.hide()
+            })
+        },
                 
  
     },
     mounted() {
+             this.get_user_stats()
         this.get_bronze_courses()
         this.get_silver_courses()
         this.get_gold_courses()
         this.get_diamond_courses()
+
+   
     },
     
 }
@@ -313,5 +386,14 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+.blocked{
+    width: 100%;
+    height: inherit;
+    z-index: 999;
+    position: absolute;
+    background-color: red;
+    opacity: 0.8;
 }
 </style>
