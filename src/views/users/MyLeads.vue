@@ -23,11 +23,11 @@
                         <tbody>
                             <tr v-for="lead in leads" :key="lead.index">
                                 <td>#</td>
-                                <td>{{lead.name}}</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>{{lead.lead_name}}</td>
+                                <td>{{lead.lead_email}}</td>
+                                <td>{{lead.lead_phone}}</td>
+                                <td>{{lead.created_at}}</td>
+                                <td>{{lead.status}}</td>
 
                             </tr>
                         </tbody>
