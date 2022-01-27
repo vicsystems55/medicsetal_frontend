@@ -470,10 +470,10 @@
                         <use xlink:href="#icon-arrow-down"></use>
                       </svg></span>
                                 </a>
-                                <div class="profile-dropdown dropdown-menu dropdown-menu--right"><a class="profile-dropdown__item dropdown-menu__item" href="#" tabindex="0"><span class="profile-dropdown__icon">
+                                <div class="profile-dropdown dropdown-menu dropdown-menu--right"><router-link class="profile-dropdown__item dropdown-menu__item" to="/user/profile" tabindex="0"><span class="profile-dropdown__icon">
                         <svg class="icon-icon-user">
                           <use xlink:href="#icon-user"></use>
-                        </svg></span><span>My Profile</span></a>
+                        </svg></span><span>My Profile</span></router-link>
                     
                         <a class="profile-dropdown__item dropdown-menu__item" href="#" tabindex="0"><span class="profile-dropdown__icon">
                         <svg class="icon-icon-settings">
