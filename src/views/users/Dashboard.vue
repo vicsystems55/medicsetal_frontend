@@ -12,7 +12,7 @@
 
                  <div class="col-md-4 p-2 d-none">
                     <div class="widget">
-                        <div style="height: 130px;" class="widget__wrapper">
+                        <div style="height: 150px;" class="widget__wrapper">
 
                             <div class="">
                                 <h3 class="widget__title">Wallet</h3>
@@ -33,9 +33,9 @@
                     </div>
                 </div>
 
-                <div class="col-md-4 p-2">
+                <div class="col-md-4 p-mb-2 mx-auto">
                     <div class="widget">
-                        <div style="height: 130px;" class="widget__wrapper">
+                        <div style="height: 150px;" class="widget__wrapper">
 
                             <div class="">
                                 <h3 class="widget__title">Total Leads</h3>
@@ -56,9 +56,9 @@
                     </div>
                 </div>
 
-                 <div class="col-md-4 p-mb-2">
+                 <div class="col-md-4 p-mb-2 mx-auto">
                     <div class="widget">
-                        <div style="min-height: 130px;" class="widget__wrapper">
+                        <div style="height: 150px;" class="widget__wrapper">
 
                             <div class="">
                                 <h3 class="widget__title">Current Package</h3>
