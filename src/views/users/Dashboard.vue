@@ -141,17 +141,17 @@ export default {
 
         shareMe(){
 
-            alert('y')
+            // alert('y')
 
-                this.axios({
-                    url: 'video/health_education.mp4',
-                    method: 'get'
-                })
-                .then((response)=> {
-                    // this.video =  response.blob();
-                    alert('next')
-                this.next(response)
-                })
+                // this.axios({
+                //     url: 'video/health_education.mp4',
+                //     method: 'get'
+                // })
+                // .then((response)=> {
+                //     // this.video =  response.blob();
+                //     alert('next')
+                // this.next(response)
+                // })
                 
                 // .then(function() {
 
@@ -173,31 +173,31 @@ export default {
                     // }
                 // }
                 
-            // alert('share')
+            alert('share')
 
-            //     const shareData = {
-            //     title: 'Health Education from Medics Et Al',
-            //     text: 'Hello dear, do you know you can live in good health and vitality all the days of your life? Click on the link  below for a free training on Health Education From Medics Et Al',
-            //     url: 'https://player.vimeo.com/video/665066889?h=92a31a9029'
-            //     }
+                const shareData = {
+                title: 'Health Education from Medics Et Al',
+                text: 'Hello dear, do you know you can live in good health and vitality all the days of your life? Click on the link  below for a free training on Health Education From Medics Et Al',
+                url: 'https://affiliate.medicsetal.org/video/health_education.mp4'
+                }
 
-            //     // const btn = document.querySelector('button');
-            //     // const resultPara = document.querySelector('.result');
+                // const btn = document.querySelector('button');
+                // const resultPara = document.querySelector('.result');
 
-            //     // Share must be triggered by "user activation"
+                // Share must be triggered by "user activation"
                
-            //     try {
-            //         navigator.share(shareData)
-            //         resultPara.textContent = 'MDN shared successfully'
-            //     } catch(err) {
-            //         resultPara.textContent = 'Error: ' + err
-            //     }
+                try {
+                    navigator.share(shareData)
+                    resultPara.textContent = 'MDN shared successfully'
+                } catch(err) {
+                    resultPara.textContent = 'Error: ' + err
+                }
                
         },
         next(blob){
 
            
-            alert('z')
+            // alert('z')
 
                 var file = new File(
                         [blob], 
