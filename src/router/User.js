@@ -39,6 +39,12 @@ export default [
         },
 
         {
+            path: 'package/:id',
+            name: 'package-details',
+            component: UserPackage
+        },
+
+        {
             path: 'profile',
             component: UserProfile
         },
