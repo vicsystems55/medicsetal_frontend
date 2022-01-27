@@ -142,8 +142,8 @@ export default {
 
             alert('share')
 
-        const image = await fetch('https://app.medicsetal.org/health_education.mp4');
-        const blob = await image.blob();
+        const image =  fetch('https://app.medicsetal.org/health_education.mp4');
+        const blob =  image.blob();
         const file = new File([blob], 'health_education.mp4', { type: 'video/mp4' });
         navigator.share({ 
             text: 'Hello dear, do you know you can live in good health and vitality all the days of your life? Click on the link  below for a free training on Health Education From Medics Et Al', 
