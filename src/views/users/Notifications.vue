@@ -10,9 +10,9 @@
         <div class="col-md-6 mt-5">
             <div class="list-group">
 
-                <a v-for="notification in notifications" :key="notification.index" href="#" class="list-group-item list-group-item-action ">
+                <a v-for="notification in notifications" :key="notification.index" href="#" class="list-group-item list-group-item-action mb-2 ">
                     <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">{{notification.}}</h5>
+                    <h5 class="mb-1">{{notification.title}}</h5>
          
                     </div>
                     <p class="mb-1">Some placeholder content in a paragraph.</p>
@@ -50,7 +50,7 @@ export default {
                 });
     
             this.axios({
-                url: process.env.VUE_APP_URL+'/api/notifications',
+                url: process.env.VUE_APP_URL+'/api/get_notifications',
                 method: 'get',
                 headers: {
                     'Access-Control-Allow-Origin': '*',
