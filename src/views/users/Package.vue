@@ -192,7 +192,7 @@ export default {
 
                 this.axios({
                 method: "post",
-                url: 'https://app.medicsetal.org/api/payment_callback',
+                url: process.env.VUE_APP_URL+'/api/payment_callback',
                 data: {
                     package_id: this.pack.id,
                 },
