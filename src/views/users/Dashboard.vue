@@ -144,7 +144,7 @@ export default {
                 const shareData = {
                 title: 'Health Education from Medics Et Al',
                 text: 'Hello dear, do you know you can live in good health and vitality all the days of your life? Click on the link  below for a free training on Health Education From Medics Et Al',
-                url: 'https://www.youtube.com/watch?v=9lyLQtfc39U'
+                url: 'https://player.vimeo.com/video/665066889?h=92a31a9029'
                 }
 
                 // const btn = document.querySelector('button');
