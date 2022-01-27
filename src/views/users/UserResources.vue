@@ -38,6 +38,8 @@
                     <div v-for="silver_course in silver_courses" :key="silver_course.index" class="col-md-4">
                         <div  style="height: 350px;" class="shadow mb-3">
                             <div class="videoWrapper bg-primary shadow border border-success">
+
+                                <h6 class="text-center pt-5 text-white">Comming Soon</h6>
                                 <!-- <iframe  src="https://player.vimeo.com/video/665066889?h=92a31a9029" width="100%" height="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe> -->
                         
                             </div>
@@ -57,6 +59,8 @@
                     <div v-for="gold_course in gold_courses" :key="gold_course.index" class="col-md-4">
                         <div  style="height: 350px;" class="shadow mb-3">
                             <div class="videoWrapper bg-primary shadow border border-success">
+
+                                 <h6 class="text-center pt-5 text-white">Comming Soon</h6>
                                 <!-- <iframe  src="https://player.vimeo.com/video/665066889?h=92a31a9029" width="100%" height="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe> -->
                         
                             </div>
@@ -77,6 +81,8 @@
                     <div v-for="diamond_course in diamond_courses" :key="diamond_course.index" class="col-md-4">
                         <div  style="height: 350px;" class="shadow mb-3">
                             <div class="videoWrapper bg-primary shadow border border-success">
+
+                                 <h6 class="text-center pt-5 text-white">Comming Soon</h6>
                                 <!-- <iframe  src="https://player.vimeo.com/video/665066889?h=92a31a9029" width="100%" height="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe> -->
                         
                             </div>

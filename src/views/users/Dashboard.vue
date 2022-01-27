@@ -89,7 +89,7 @@
             <div class="container py-3">
 
                 <div class="bg-white">
-                    <div class="widget-wrappe">
+                    <div class="widget-wrapper">
                         <h6 class="text-center">Sales page Link</h6>
                         <div class="col-md-6 mx-auto">
                             <div class="form-group row">
