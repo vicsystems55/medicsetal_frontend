@@ -39,7 +39,7 @@
 
                             <div class="">
                                 <h3 class="widget__title">Total Leads</h3>
-                                <div class="widget__status-title text-grey">Total propects</div>
+                                <div class="widget__status-title text-grey">Total prospects</div>
                                 <div class="widget__trade">
                                 <span class="widget__trade-count">{{no_leads??0}}</span>
                                 <span class="trade-icon trade-icon--up">
