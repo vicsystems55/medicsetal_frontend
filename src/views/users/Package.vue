@@ -194,7 +194,7 @@ export default {
                 method: "post",
                 url: 'https://app.medicsetal.org/api/payment_callback',
                 data: {
-                    package_id: 1,
+                    package_id: this.pack.id,
                 },
                     headers: {
                     'Access-Control-Allow-Origin': '*',
