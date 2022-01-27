@@ -97,8 +97,8 @@
                                 <input id="code2" type="text" v-model="salespagelink" class="form-control col">
                                 <button @click="copy_salespage_code()" class="btn btn-sm btn-secondary">copy</button>
                             </div>
-                            <h6 class="text-center">Referral Link</h6>
-                            <div class="form-group row">
+                            <h6 class="text-center d-none">Referral Link</h6>
+                            <div class="form-group row d-none">
                                 <input id="code" type="text" v-model="referrerLink" class="form-control col">
                                 <button @click="copy_referrer_code()" class="btn btn-sm btn-secondary">copy</button>
                             </div>
@@ -177,7 +177,7 @@ export default {
 
                 const shareData = {
                 title: 'Health Education from Medics Et Al',
-                text: 'Hello dear, do you know you can live in good health and vitality all the days of your life? Click on the link  below for a free training on Health Education From Medics Et Al',
+                text: 'Hello dear, do you know you can live in good health and vitality all the days of your life? Click on the link '  +this.salespagelink +' for a free training on Health Education From Medics Et Al ' ,
                 url: 'https://affiliate.medicsetal.org/video/health_education.mp4'
                 }
 
