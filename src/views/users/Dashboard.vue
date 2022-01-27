@@ -133,23 +133,46 @@ export default {
             whatsappLink: '',
             user_subscription: [],
             package_image: '',
-            no_leads: ''
+            no_leads: '',
+            video:[]
         }
     },
     methods: {
 
         shareMe(){
 
-            alert('share')
+            alert('y')
 
-        const image =  fetch('https://app.medicsetal.org/health_education.mp4');
-        const blob =  image.blob();
-        const file = new File([blob], 'health_education.mp4', { type: 'video/mp4' });
-        navigator.share({ 
-            text: 'Hello dear, do you know you can live in good health and vitality all the days of your life? Click on the link  below for a free training on Health Education From Medics Et Al', 
-            files: [file] 
-            
-            });
+                this.axios({
+                    url: 'video/health_education.mp4',
+                    method: 'get'
+                })
+                .then((response)=> {
+                    // this.video =  response.blob();
+                    alert('next')
+                this.next(response)
+                })
+                
+                // .then(function() {
+
+                    // var file = new File(
+                    //     [blob], 
+                    //     "picture.jpg", 
+                    //     {
+                    //         type: 'image/jpeg',
+                    //     });
+                    // var filesArray = [file];
+
+                    // if(navigator.canShare && navigator.canShare({ files: filesArray })) {
+                    // navigator.share({
+                    //     text: 'some_text',
+                    //     files: filesArray,
+                    //     title: 'some_title',
+                    //     url: 'some_url'
+                    // });
+                    // }
+                // }
+                
             // alert('share')
 
             //     const shareData = {
@@ -170,6 +193,30 @@ export default {
             //         resultPara.textContent = 'Error: ' + err
             //     }
                
+        },
+        next(blob){
+
+           
+            alert('z')
+
+                var file = new File(
+                        [blob], 
+                        "health_education.mp4", 
+                        {
+                            type: 'video/mp4',
+                        });
+
+                    var filesArray = [file];
+
+                    if(navigator.canShare && navigator.canShare({ files: filesArray })) {
+                        navigator.share({
+                            text: 'Hello dear, do you know you can live in good health and vitality all the days of your life? Click on the link  below for a free training on Health Education From Medics Et Al',
+                            files: filesArray,
+                            title: 'Medics Et Al',
+                            url: this.salespagelink
+                        });
+                    }
+
         },
         getUserData(){
             
