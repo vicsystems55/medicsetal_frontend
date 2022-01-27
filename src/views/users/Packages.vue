@@ -10,7 +10,7 @@
 
         <div class="container">
             <div class="row">
-                <div v-for="pack in packages" :key="pack.index" class="col-lg-3 col-md-6">
+                <div v-for="pack in packages" :key="pack.index" class="col-md-3">
                     <div class="customer-account__item-1 customer-profile customer-card card">
                         <div class="card__wrapper">
                             <div class="card__container">

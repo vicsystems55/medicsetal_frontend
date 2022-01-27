@@ -2,7 +2,7 @@
     <div>
         <div class="container">
                 <div class="page-header">
-                    <h1 class="page-header__title">Packages</h1>
+                    <h1 class="page-header__title">Package Details</h1>
                 </div>
                 
         </div>
@@ -20,6 +20,8 @@
                                         <img :src='getImageUrl(pack.featured_image)' alt="">
                                     </div>
                                     <h4 class="customer-profile__title">{{pack.name}}</h4>
+
+                             
                                     <a href="" class="">
                                         <div class="customer-profile__balance">
                                         <div class="label label--primary label--lg">
@@ -28,7 +30,7 @@
                                             <svg class="icon-icon-wallet">
                                                 <use xlink:href="#icon-wallet"></use>
                                             </svg>
-                                        </span> N 25,000</div>
+                                        </span> N {{pack.fee}}</div>
                                     </div>
                                     </a>
                                 </div>
@@ -45,11 +47,17 @@
                 <div class="col-lg-7 mx-auto ">
                     <h4>{{pack.name}}</h4>
 
+                    <p class="py-3">
+                        {{pack.description}}
+                    </p>
+
 
                     <h6>Payment Methods</h6>
 
+                    
 
-                        <div @click="selectMethod('paystack')" id="paystack" class="p-3 bg-white  mb-3 " style="border-radius: 8px;">
+
+                        <div @click="selectMethod('paystack')" id="paystack" class="p-3 bg-white  mb-3 border border-primary shadow" style="border-radius: 8px;">
                             <h4>Paystack</h4>
                         </div>
                          <div   @click="selectMethod('flutterwave')" id="flutterwave" class="p-3 bg-white d-none" style="border-radius: 8px;">
@@ -160,7 +168,7 @@ export default {
             .then((response)=>{
 
                 this.pack = response.data
-                this.amount = this.pack.fee
+                this.amount = this.pack.fee *100
 
                 console.log(response)
             })
