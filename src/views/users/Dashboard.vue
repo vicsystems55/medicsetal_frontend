@@ -142,8 +142,8 @@ export default {
             alert('share')
 
                 const shareData = {
-                title: 'Health Education from Medics Et Al',
-                text: 'https://vimeo.com/665066889/92a31a9029 Hello dear, do you know you can live in good health and vitality all the days of your life? Click on the link  below for a free training on Health Education From Medics Et Al',
+                title: '',
+                text: 'Hello, glad to know you have shown interest in joining Medics Et Al'+this.referrerLink,
                 url: 'https://vimeo.com/665066889/92a31a9029'
                 }
 
