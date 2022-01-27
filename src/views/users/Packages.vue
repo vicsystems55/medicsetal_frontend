@@ -20,7 +20,7 @@
                                         <img :src='getImageUrl(pack.featured_image)' alt="">
                                     </div>
                                     <router-link :to="{name:'package-details',params:{id:pack.id} }" class="">
-                                    <h4 class="customer-profile__title">{{pack.name}}</h4>
+                                    <h4 class="customer-profile__title text-center">{{pack.name}}</h4>
                                     <div class="p-1">
                                         
                                     </div>
@@ -70,6 +70,14 @@ export default {
             },
         getPackages(){
 
+                let loader = this.$loading.show({
+                    // Optional parameters
+                    container: this.fullPage ? null : this.$refs.formContainer,
+                    canCancel: false,
+                    onCancel: this.onCancel,
+                    color: '#6CC3EC',
+                });
+
             this.axios({
                 url: process.env.VUE_APP_URL+'/api/packages',
                 method: 'get'
@@ -79,6 +87,9 @@ export default {
                 this.packages = response.data
 
                 console.log(response.data)
+
+                
+                loader.hide()
             })
             .catch((response)=>{
 

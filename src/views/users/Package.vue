@@ -16,9 +16,10 @@
                             <div class="card__container">
                                 <div class="card__body">
                                     <div class="customer-profile__avatar">
-                                        
+                                         .
+                                        <img :src='getImageUrl(pack.featured_image)' alt="">
                                     </div>
-                                    <h4 class="customer-profile__title">Bronze</h4>
+                                    <h4 class="customer-profile__title">{{pack.name}}</h4>
                                     <a href="" class="">
                                         <div class="customer-profile__balance">
                                         <div class="label label--primary label--lg">
@@ -42,7 +43,7 @@
                 </div>
 
                 <div class="col-lg-7 mx-auto ">
-                    <h4>Bronze Package</h4>
+                    <h4>{{pack.name}}</h4>
 
 
                     <h6>Payment Methods</h6>
@@ -104,7 +105,7 @@ export default {
         amount: 2500000,
         reference: 'ABCDEFGHI1231234567AB',
 
-        package: []
+        pack: []
           
         }
     },
@@ -112,6 +113,10 @@ export default {
         paystack,
     },
     methods: {
+            getImageUrl(url) {
+                // var images = require.context('../assets/', false, /\.png$/)
+                return url
+            },
         selectMethod($id){
 
             if ($id == 'paystack') {
@@ -145,7 +150,25 @@ export default {
 
         getPackage(){
 
-            
+             this.axios({
+                url: process.env.VUE_APP_URL+'/api/packages',
+                method: 'get',
+                params:{
+                    package_id: this.$route.params.id
+                }
+            })
+            .then((response)=>{
+
+                this.pack = response.data
+                this.amount = this.pack.fee
+
+                console.log(response)
+            })
+            .catch((response)=>{
+
+                console.log(response)
+            })
+
 
         },
 
