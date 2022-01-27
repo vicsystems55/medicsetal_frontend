@@ -589,6 +589,7 @@ export default {
             alert('loggin out')
             localStorage.setItem('user_role', '')
             localStorage.setItem('user_data', '')
+            localStorage.setItem('user_token', '')
 
             this.$router.push('/login');
         },

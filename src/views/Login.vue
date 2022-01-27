@@ -590,7 +590,10 @@ export default {
     },
 
     mounted() {
-         
+            if(localStorage.getItem('user_token')){
+                
+                 return this.$router.push('/user/dashboard')
+            }
     },  
     
 }

@@ -15,7 +15,7 @@
                     <h5 class="mb-1">{{notification.title}}</h5>
          
                     </div>
-                    <p class="mb-1">Some placeholder content in a paragraph.</p>
+                    <p class="mb-1">{{notification.log}}</p>
                     <small></small>
                 </a>
 
