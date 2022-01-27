@@ -90,11 +90,12 @@
 
                 <div class="bg-white">
                     <div class="widget-wrapper">
-                        <h6 class="text-center">Sales page Link</h6>
+                        <div class="p-1"></div>
+                        <h6 class="text-center">.Sales page Link</h6>
                         <div class="col-md-6 mx-auto">
                             <div class="form-group row">
-                                <input id="code" type="text" v-model="salespagelink" class="form-control col">
-                                <button @click="copy_referrer_code()" class="btn btn-sm btn-secondary">copy</button>
+                                <input id="code2" type="text" v-model="salespagelink" class="form-control col">
+                                <button @click="copy_salespage_code()" class="btn btn-sm btn-secondary">copy</button>
                             </div>
                             <h6 class="text-center">Referral Link</h6>
                             <div class="form-group row">
@@ -142,8 +143,8 @@ export default {
 
                 const shareData = {
                 title: 'Health Education from Medics Et Al',
-                text: 'https://vimeo.com/video/665066889/92a31a9029 Hello dear, do you know you can live in good health and vitality all the days of your life? Click on the link ' +this.salespagelink+' below for a free training on Health Education From Medics Et Al',
-                url: 'https://vimeo.com/video/665066889/92a31a9029'
+                text: 'https://vimeo.com/665066889/92a31a9029 Hello dear, do you know you can live in good health and vitality all the days of your life? Click on the link ' +this.salespagelink+' below for a free training on Health Education From Medics Et Al',
+                url: 'https://vimeo.com/665066889/92a31a9029'
                 }
 
                 // const btn = document.querySelector('button');
@@ -213,7 +214,16 @@ export default {
             copyText.select();
             copyText.setSelectionRange(0, 99999)
             document.execCommand("copy");
-            toast.success('Referrer code copied');
+            toast.success('Referrer link copied');
+            // alert("Copied the text: " + copyText.value);
+        },
+
+                copy_salespage_code(){
+            var copyText = document.getElementById("code2");
+            copyText.select();
+            copyText.setSelectionRange(0, 99999)
+            document.execCommand("copy");
+            toast.success('Sales Page link copied');
             // alert("Copied the text: " + copyText.value);
         }
     },
