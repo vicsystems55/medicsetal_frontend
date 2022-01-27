@@ -139,25 +139,36 @@ export default {
     methods: {
 
         shareMe(){
+
             alert('share')
 
-                const shareData = {
-                title: 'Health Education from Medics Et Al',
-                text: 'Hello dear, do you know you can live in good health and vitality all the days of your life? Click on the link  below for a free training on Health Education From Medics Et Al',
-                url: 'https://player.vimeo.com/video/665066889?h=92a31a9029'
-                }
+        const image = await fetch('https://app.medicsetal.org/health_education.mp4');
+        const blob = await image.blob();
+        const file = new File([blob], 'health_education.mp4', { type: 'video/mp4' });
+        navigator.share({ 
+            text: 'Hello dear, do you know you can live in good health and vitality all the days of your life? Click on the link  below for a free training on Health Education From Medics Et Al', 
+            files: [file] 
+            
+            });
+            // alert('share')
 
-                // const btn = document.querySelector('button');
-                // const resultPara = document.querySelector('.result');
+            //     const shareData = {
+            //     title: 'Health Education from Medics Et Al',
+            //     text: 'Hello dear, do you know you can live in good health and vitality all the days of your life? Click on the link  below for a free training on Health Education From Medics Et Al',
+            //     url: 'https://player.vimeo.com/video/665066889?h=92a31a9029'
+            //     }
 
-                // Share must be triggered by "user activation"
+            //     // const btn = document.querySelector('button');
+            //     // const resultPara = document.querySelector('.result');
+
+            //     // Share must be triggered by "user activation"
                
-                try {
-                    navigator.share(shareData)
-                    resultPara.textContent = 'MDN shared successfully'
-                } catch(err) {
-                    resultPara.textContent = 'Error: ' + err
-                }
+            //     try {
+            //         navigator.share(shareData)
+            //         resultPara.textContent = 'MDN shared successfully'
+            //     } catch(err) {
+            //         resultPara.textContent = 'Error: ' + err
+            //     }
                
         },
         getUserData(){
