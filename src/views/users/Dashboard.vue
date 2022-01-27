@@ -41,7 +41,7 @@
                                 <h3 class="widget__title">Total Leads</h3>
                                 <div class="widget__status-title text-grey">Total propects</div>
                                 <div class="widget__trade">
-                                <span class="widget__trade-count">4</span>
+                                <span class="widget__trade-count">{{no_leads??0}}</span>
                                 <span class="trade-icon trade-icon--up">
                                     <svg class="icon-icon-trade-up">
                                         <use xlink:href="#icon-trade-up"></use>
@@ -56,15 +56,15 @@
                     </div>
                 </div>
 
-                 <div class="col-md-4 p-2">
+                 <div class="col-md-4 p-mb-2">
                     <div class="widget">
-                        <div style="height: 130px;" class="widget__wrapper">
+                        <div style="min-height: 130px;" class="widget__wrapper">
 
                             <div class="">
                                 <h3 class="widget__title">Current Package</h3>
                                 <div class="widget__status-title text-grey">Current Medicsetal Subscription</div>
-                                <div class="widget__trade">
-                                    <img class="float-right" style="height: 90px;" v-bind:src="package_image"  alt=""> <br>
+                                <div class="widget__trade p-2">
+                                    <img class="float-right" style="height: 70px;" v-bind:src="package_image"  alt=""> <br>
                                 <span class="widget__trade-count ">{{user_subscription.name??'No Subscription Yet!!'}}</span>
                                 <span class="trade-icon trade-icon--up">
                                     <svg class="icon-icon-trade-up">
@@ -89,7 +89,7 @@
             <div class="container py-3">
 
                 <div class="bg-white">
-                    <div class="widget-wrappe py-5 px-3">
+                    <div class="widget-wrappe">
                         <h6 class="text-center">Sales page Link</h6>
                         <div class="col-md-6 mx-auto">
                             <div class="form-group row">
@@ -101,9 +101,9 @@
                                 <input id="code" type="text" v-model="referrerLink" class="form-control col">
                                 <button @click="copy_referrer_code()" class="btn btn-sm btn-secondary">copy</button>
                             </div>
-                            <div class="form-group">
-                                <iframe src="https://player.vimeo.com/video/665066889?h=92a31a9029" width="100%" height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-                                <a target="_blank" class="btn btn-success btn-sm btn-block " :href="whatsappLink">Share on Whatsapp</a> <br>
+                            <div class="form-group py-2">
+                                <iframe src="https://player.vimeo.com/video/665066889?h=92a31a9029" width="100%" max-height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                                <!-- <a target="_blank" class="btn btn-success btn-sm btn-block " :href="whatsappLink">Share on Whatsapp</a> <br> -->
                                 <button @click="shareMe()" class="btn btn-sm btn-primary btn-block">Share on Social Media</button>
                             </div>
                         </div>
@@ -131,7 +131,8 @@ export default {
             salespagelink: '',
             whatsappLink: '',
             user_subscription: [],
-            package_image: ''
+            package_image: '',
+            no_leads: ''
         }
     },
     methods: {
@@ -193,10 +194,11 @@ export default {
             })
             .then((response)=>{
 
-               console.log(response.data.user_data.subscription.package)
+               console.log(response)
 
                 this.user_subscription = response.data.user_data.subscription.package
                 this.package_image = response.data.user_data.subscription.package.featured_image
+                this.no_leads = response.data.no_leads
                 // loader.hide()
             })
             .catch((response)=>{
