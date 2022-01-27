@@ -531,9 +531,9 @@ export default {
                     color: '#6CC3EC',
                 });
 
-                    setTimeout(() => {
-                        loader.hide()
-                    }, 5000)
+                    // setTimeout(() => {
+                    //     loader.hide()
+                    // }, 5000)
 
                   
                   this.axios({
@@ -552,15 +552,21 @@ export default {
                                     localStorage.setItem('user_data', JSON.stringify(response.data.user_data))
 
                                     
-                                    loader.hide()
-
-                                     toast.success('Login Successful');
+                                   
 
                                      if (localStorage.getItem('user_role') == 'user') {
+
+                                          loader.hide()
+
+                                     toast.success('Login Successful');
 
                                          return this.$router.push('/user/dashboard')
                                          
                                      }if (localStorage.getItem('user_role') == 'admin') {
+
+                                          loader.hide()
+
+                                     toast.success('Login Successful');
 
                                          return this.$router.push('/admin')
                                          
