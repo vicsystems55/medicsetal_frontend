@@ -37,7 +37,7 @@
                     <div class="form-group text-center">
 
                         <button @click="uploadFile" class="btn btn-primary">
-                            Upload
+                            Upload Avatar
                         </button>
 
                     </div>
@@ -52,12 +52,12 @@
 
                 <div class="form-group">
                     <label for="">Bio</label>
-                    <textarea name="" id="" cols="30" rows="5" placeholder="Tell us about yourself" class="form-control"></textarea>
+                    <textarea v-model="bio" id="" cols="30" rows="5" placeholder="Tell us about yourself" class="form-control"></textarea>
                 </div>
 
                 <div class="form-group">
                     <label for="">Nationality</label>
-                    <select name="" class="form-control" id="">
+                    <select v-model="nationality" class="form-control" id="">
                         <option value="">Nigeria</option>
                         <option value="">Ghana</option>
                         
@@ -66,37 +66,37 @@
 
                 <div class="form-group">
                     <label for="">Address</label>
-                    <input type="text" class="form-control">
+                    <input type="text" v-model="address" placeholder="Address" class="form-control">
                 </div>
 
 
              <div class="form-group">
                     <label for="">Phone</label>
-                    <input type="text" class="form-control">
+                    <input type="text" v-model="phone" placeholder="Phone" class="form-control">
             </div>
 
             <div class="form-group">
                     <label for="">NOK Fullname</label>
-                    <input type="text" class="form-control">
+                    <input type="text" v-model="nok_fullname" placeholder="Next of Kin Fullname" class="form-control">
             </div>
 
             <div class="form-group">
                     <label for="">NOK Address</label>
-                    <input type="text" class="form-control">
+                    <input type="text" v-model="nok_address" placeholder="Next of Kin Address" class="form-control">
             </div>
 
             <div class="form-group">
                     <label for="">NOK Relationship</label>
-                    <input type="text" class="form-control">
+                    <input type="text" v-model="nok_relationship" placeholder="Next of Kin Relationship" class="form-control">
             </div>
 
             <div class="form-group">
                     <label for="">NOK Phone</label>
-                    <input type="text" class="form-control">
+                    <input type="text" v-model="nok_phone" placeholder="Next of Kin Phone" class="form-control">
             </div>
 
             <div class="form-group">
-                <button class="btn btn-primary float-right">Update</button>
+                <button @click="updateProfile()" class="btn btn-primary float-right">Update</button>
             </div>
 
             </div>
@@ -113,6 +113,16 @@ const toast = useToast()
 export default {
     data() {
         return {
+
+            bio : '',
+            nationality : '',
+            address : '',
+            phone : '',
+            nok_fullname : '',
+            nok_address : '',
+            nok_relationship : '',
+            nok_phone : '',
+            user_profile: []
             
         }
     },
@@ -140,9 +150,15 @@ export default {
                     onCancel: this.onCancel,
                     color: '#6CC3EC',
                 });
+
+                alert(this.address)
+                //    alert(this.nationality)
+                //       alert(this.address)
+                //          alert(this.phone)
+                //             alert(this.nok_fullname)
             
             this.axios({
-                url: '',
+                url: process.env.VUE_APP_URL+'/api/user_profile',
                 method: 'post',
                 headers: {
                     'Access-Control-Allow-Origin': '*',
@@ -150,12 +166,24 @@ export default {
                     'Accept': 'application/json',
                     'Authorization': 'Bearer ' +localStorage.getItem('user_token')
                 },
+                data:{
+                    bio : this.bio,
+                    nationality : this.nationality,
+                    address : this.address,
+                    phone : this.phone,
+                    nok_fullname : this.nok_fullname,
+                    nok_address : this.nok_address,
+                    nok_relationship : this.nok_relationship,
+                    nok_phone : this.nok_phone,
+                }
             })
             .then((response)=>{
 
                 console.log(response)
+                       
+                loader.hide()
 
-                toast.success('Login Successful');
+                toast.success('Update Successful');
 
             })
             .catch((response)=>{
@@ -175,18 +203,37 @@ export default {
 
 
                     this.axios({
-                        url: '',
-                        method: 'get',
+                            url: process.env.VUE_APP_URL+'/api/get_profile',
+                            method: 'post',
+                            headers: {
+                                'Access-Control-Allow-Origin': '*',
+                                'Content-type': 'application/json',
+                                'Accept': 'application/json',
+                                'Authorization': 'Bearer ' +localStorage.getItem('user_token')
+                            },
                         
                     })
                     .then((response)=>{
 
                         console.log(response)
 
+                        this.bio = response.data.bio
+                        this.nationality = response.data.nationality
+                        this.address = response.data.adddress
+                        this.phone = response.data.phone
+                        this.nok_fullname = response.data.nok_fullname
+                        this.nok_address = response.data.nok_address
+                        this.nok_relationship = response.data.nok_relationship
+                        this.nok_phone = response.data.nok_phone
+
+                    
+
                     })
                     .catch((response)=>{
 
                         console.log(response)
+
+                       
 
                     })
 
