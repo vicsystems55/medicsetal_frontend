@@ -2,7 +2,7 @@
     <div>
         <div class="container">
                 <div class="page-header">
-                    <h1 class="page-header__title">Packages..</h1>
+                    <h1 class="page-header__title">Packages</h1>
                 </div>
                 
         </div>
@@ -16,13 +16,15 @@
                             <div class="card__container">
                                 <div class="card__body">
                                     <div class="customer-profile__avatar">
-                                        <img :src='getImageUrl()' alt="">
+                                        .
+                                        <img :src='getImageUrl(pack.featured_image)' alt="">
                                     </div>
+                                    <router-link :to="{name:'package-details',params:{id:pack.id} }" class="">
                                     <h4 class="customer-profile__title">{{pack.name}}</h4>
                                     <div class="p-1">
                                         
                                     </div>
-                                    <router-link :to="{name:'package-details',params:{id:pack.id} }" class="">
+                                
                                         <div class="customer-profile__balance">
 
                                             

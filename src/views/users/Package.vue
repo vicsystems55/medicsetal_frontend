@@ -51,7 +51,7 @@
                         <div @click="selectMethod('paystack')" id="paystack" class="p-3 bg-white  mb-3 " style="border-radius: 8px;">
                             <h4>Paystack</h4>
                         </div>
-                         <div   @click="selectMethod('flutterwave')" id="flutterwave" class="p-3 bg-white " style="border-radius: 8px;">
+                         <div   @click="selectMethod('flutterwave')" id="flutterwave" class="p-3 bg-white d-none" style="border-radius: 8px;">
                             <h4>Flutterwave</h4>
                         </div>
 
@@ -102,7 +102,9 @@ export default {
         firstname: 'victor',
         lastname: 'asuquo',
         amount: 2500000,
-        reference: 'ABCDEFGHI1231234567AB'
+        reference: 'ABCDEFGHI1231234567AB',
+
+        package: []
           
         }
     },
@@ -138,6 +140,12 @@ export default {
            
             document.getElementById($id).classList.add("border");
             document.getElementById($id).classList.add("border-primary");
+
+        },
+
+        getPackage(){
+
+            
 
         },
 
@@ -219,6 +227,8 @@ export default {
         let r = (Math.random() + 1).toString(36).substring(2);
         this.reference = r;
         console.log( this.reference);
+
+        this.getPackage()
     },
 }
 </script>
