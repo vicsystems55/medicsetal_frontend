@@ -5,7 +5,7 @@
                     <h1 class="page-header__title">Medics Et Al Courses</h1>
                 </div>
 
-                <div class="c  shadow p-3 bg-warning">
+                <div style="background-color: #b08d57;" class="c  shadow p-3 ">
                     <h4 class="text-dark text-center ">Bronze Package</h4>
                 </div>
 
@@ -43,7 +43,9 @@
                 </div>
 
 
-                <h6>Silver Package</h6>
+                <div style="background-color: #C0C0C0;" class="c  shadow p-3 ">
+                    <h4 class="text-dark text-center ">Silver Package</h4>
+                </div>
 
                 <hr class="">
 
@@ -64,7 +66,9 @@
                     </div>
                 </div>
 
-                <h6>Gold Package</h6>
+                <div style="background-color: #FFD700;" class="c  shadow p-3 ">
+                    <h4 class="text-dark text-center ">Gold Package</h4>
+                </div>
 
                 <hr class="">
 
@@ -86,7 +90,10 @@
                 </div>
 
 
-            <h6>Diamond Package</h6>
+                <div style="background-color: #b9f2ff;" class="c  shadow p-3 ">
+                    <h4 class="text-dark text-center ">Diamond Package</h4>
+                </div>
+
 
                 <hr class="">
 
