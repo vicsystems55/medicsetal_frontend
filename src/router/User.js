@@ -43,7 +43,7 @@ export default [
             name: 'package-details',
             component: UserPackage
         },
-
+ 
         {
             path: 'profile',
             component: UserProfile

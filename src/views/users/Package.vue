@@ -60,11 +60,7 @@
                         <div @click="selectMethod('paystack')" id="paystack" class="p-3 bg-white  mb-3 border border-primary shadow" style="border-radius: 8px;">
                             <h4>Paystack</h4>
                         </div>
-                         <div   @click="selectMethod('flutterwave')" id="flutterwave" class="p-3 bg-white d-none" style="border-radius: 8px;">
-                            <h4>Flutterwave</h4>
-                        </div>
-
-                        <div class=" mt-5">
+                         <div class=" mt-5">
                                              <paystack
                                             buttonClass="'btn btn-primary btn-lg shadow float-right'"
                                             buttonText="Pay Online"
@@ -76,6 +72,27 @@
                                             :onCanel="onCancelledPayment">
                                         </paystack>
                         </div>
+                         <div   @click="selectMethod('flutterwave')" id="flutterwave" class="mt-2 p-3 bg-white " style="border-radius: 8px;">
+                            <h4>Pay Offline</h4>
+
+                            <table class="table">
+                                <tr>
+                                    <td>Account Name:</td>
+                                    <th>MEDICS ET AL LIMITED </th>
+                                </tr>
+                                <tr>
+                                    <td>Account Number:</td>
+                                    <th>0604392917</th>
+                                </tr>
+                                <tr>
+                                    <td>Bank</td>
+                                    <th>Guaranty Trust Bank</th>
+                                </tr>
+                            </table>
+                             
+                        </div>
+
+                       
 
 
 
