@@ -177,8 +177,8 @@ export default {
 
                 const shareData = {
                 title: 'Health Education from Medics Et Al',
-                text: 'Hello dear, do you know you can live in good health and vitality all the days of your life? Click on the link '  +this.salespagelink +' for a free training on Health Education From Medics Et Al ' ,
-                url: ''
+                text: 'Hello dear, do you know you can live in good health and vitality all the days of your life? Click on the link  for a free training on Health Education From Medics Et Al ' ,
+                url: this.salespagelink
                 }
 
                 // const btn = document.querySelector('button');
