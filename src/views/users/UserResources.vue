@@ -249,7 +249,7 @@ export default {
                        if (this.user_subscription.id >= this.bronze_courses[0].package.id) {
 
                              console.log(this.bronze_access)
-                           return this.bronze_access = true;
+                           this.bronze_access = true;
 
                            
                         }
@@ -302,7 +302,7 @@ export default {
                         if (this.user_subscription.id >= this.silver_courses[0].package.id) {
 
                             console.log(this.siver_access)
-                           return this.silver_access = true;
+                           this.silver_access = true;
                         }
 
 
@@ -349,7 +349,7 @@ export default {
                      if (this.user_subscription.id >= this.gold_courses[0].package.id) {
 
                          console.log(this.gold_access);
-                         return  this.gold_access = true;
+                        this.gold_access = true;
                         }
 
 
@@ -395,7 +395,7 @@ export default {
 
                          if (this.user_subscription.id >= this.diamond_courses[0].package.id) {
                              console.log(this.diamond_courses)
-                          return this.diamond_access = true;
+                          this.diamond_access = true;
                         }
 
 
