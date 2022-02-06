@@ -253,6 +253,9 @@ export default {
                         //       alert(this.bronze_courses[0].package.id)
                         //       alert(this.bronze_access)
                              console.log(this.bronze_access)
+
+
+                             return this.bronze_access;
                         
 
                            
@@ -313,6 +316,8 @@ export default {
                         //       alert(this.silver_courses[0].package.id)
                         //       alert(this.silver_access)
                              console.log(this.bronze_access)
+
+                             return this.silver_access;
                         }
 
 
@@ -370,6 +375,8 @@ export default {
 
                          console.log(this.gold_access);
 
+                         return this.gold_access;
+
                         }
 
 
@@ -424,6 +431,9 @@ export default {
                             //   alert(this.diamond_access)
 
                               console.log(this.diamond_access)
+
+
+                              return this.diamond_access;
                         }
 
 
