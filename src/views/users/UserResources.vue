@@ -251,7 +251,7 @@ export default {
                            this.bronze_access = true;
                         //    alert(this.user_subscription.id)
                         //       alert(this.bronze_courses[0].package.id)
-                        //       alert(this.bronze_access)
+                              alert(this.bronze_access)
                              console.log(this.bronze_access)
 
 
