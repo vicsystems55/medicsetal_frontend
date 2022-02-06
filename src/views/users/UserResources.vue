@@ -246,12 +246,9 @@ export default {
 
                      loader.hide()
 
-                          alert(this.user_subscription.id)
-                              alert(this.bronze_courses[0].package.id)
-                              alert(this.bronze_access)
-                             console.log(this.bronze_access)
 
                        if (this.user_subscription.id >= this.bronze_courses[0].package.id) {
+                           this.bronze_access = true;
                            alert(this.user_subscription.id)
                               alert(this.bronze_courses[0].package.id)
                               alert(this.bronze_access)
@@ -306,15 +303,16 @@ export default {
 
                      loader.hide()
 
+
+                        if (this.user_subscription.id >= this.silver_courses[0].package.id) {
+
+                           this.silver_access = true;
+
+                           
                          alert(this.user_subscription.id)
                               alert(this.silver_courses[0].package.id)
                               alert(this.silver_access)
                              console.log(this.bronze_access)
-
-                        if (this.user_subscription.id >= this.silver_courses[0].package.id) {
-
-                            console.log(this.siver_access)
-                           this.silver_access = true;
                         }
 
 
@@ -357,9 +355,7 @@ export default {
 
                      loader.hide()
 
-                          alert(this.user_subscription.id)
-                              alert(this.gold_courses[0].package.id)
-                              alert(this.gold_access)
+                     
 
                      
 
@@ -368,6 +364,10 @@ export default {
 
                          console.log(this.gold_access);
                         this.gold_access = true;
+
+                             alert(this.user_subscription.id)
+                              alert(this.gold_courses[0].package.id)
+                              alert(this.gold_access)
                         }
 
 
@@ -411,13 +411,15 @@ export default {
 
                      loader.hide()
 
-                             alert(this.user_subscription.id)
-                              alert(this.diamond_courses[0].package.id)
-                              alert(this.diamond_access)
+                       
 
                          if (this.user_subscription.id >= this.diamond_courses[0].package.id) {
-                             console.log(this.diamond_courses)
+                           
                           this.diamond_access = true;
+
+                                alert(this.user_subscription.id)
+                              alert(this.diamond_courses[0].package.id)
+                              alert(this.diamond_access)
                         }
 
 
