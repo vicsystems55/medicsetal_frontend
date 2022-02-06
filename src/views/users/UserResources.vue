@@ -177,6 +177,8 @@ export default {
                     canCancel: false,
                     onCancel: this.onCancel,
                     color: '#6CC3EC',
+                    loader: 'bars',
+                    opacity: 0.3
                 });
 
                 this.axios({
