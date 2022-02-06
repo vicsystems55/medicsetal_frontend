@@ -244,7 +244,7 @@ export default {
 
                     console.log(this.bronze_courses)
 
-                     loader.hide()
+                    //  loader.hide()
 
 
                        if (this.user_subscription.id >= this.bronze_courses[0].package.id) {
@@ -255,11 +255,13 @@ export default {
                              console.log(this.bronze_access)
 
 
-                             return this.bronze_access;
+                            //  return this.get_silver_courses();
                         
 
                            
                         }
+
+                          return this.get_silver_courses();
 
 
                 })
@@ -270,15 +272,15 @@ export default {
 
             get_silver_courses (){
 
-                                let loader = this.$loading.show({
-                    // Optional parameters
-                    container: this.fullPage ? null : this.$refs.formContainer,
-                    canCancel: false,
-                    onCancel: this.onCancel,
-                    color: '#6CC3EC',
-                       loader: 'bars',
-                    opacity: 0.3
-                });
+                //                 let loader = this.$loading.show({
+                //     // Optional parameters
+                //     container: this.fullPage ? null : this.$refs.formContainer,
+                //     canCancel: false,
+                //     onCancel: this.onCancel,
+                //     color: '#6CC3EC',
+                //        loader: 'bars',
+                //     opacity: 0.3
+                // });
 
                 this.axios({
                         method: 'post',
@@ -304,7 +306,7 @@ export default {
 
                     console.log(this.silver_courses)
 
-                     loader.hide()
+                    //  loader.hide()
 
 
                         if (this.user_subscription.id >= this.silver_courses[0].package.id) {
@@ -317,8 +319,10 @@ export default {
                         //       alert(this.silver_access)
                              console.log(this.bronze_access)
 
-                             return this.silver_access;
+                            
                         }
+
+                         return this.get_gold_courses();
 
 
                 })
@@ -329,13 +333,13 @@ export default {
 
             get_gold_courses (){
 
-                                let loader = this.$loading.show({
-                    // Optional parameters
-                    container: this.fullPage ? null : this.$refs.formContainer,
-                    canCancel: false,
-                    onCancel: this.onCancel,
-                    color: '#6CC3EC',
-                });
+                //                 let loader = this.$loading.show({
+                //     // Optional parameters
+                //     container: this.fullPage ? null : this.$refs.formContainer,
+                //     canCancel: false,
+                //     onCancel: this.onCancel,
+                //     color: '#6CC3EC',
+                // });
 
                 this.axios({
                         method: 'post',
@@ -375,9 +379,11 @@ export default {
 
                          console.log(this.gold_access);
 
-                         return this.gold_access;
+                        //  return this.gold_access;
 
                         }
+
+                           return this.get_diamond_courses();
 
 
                 })
@@ -388,13 +394,13 @@ export default {
 
             get_diamond_courses (){
 
-                                let loader = this.$loading.show({
-                    // Optional parameters
-                    container: this.fullPage ? null : this.$refs.formContainer,
-                    canCancel: false,
-                    onCancel: this.onCancel,
-                    color: '#6CC3EC',
-                });
+                //                 let loader = this.$loading.show({
+                //     // Optional parameters
+                //     container: this.fullPage ? null : this.$refs.formContainer,
+                //     canCancel: false,
+                //     onCancel: this.onCancel,
+                //     color: '#6CC3EC',
+                // });
 
                 this.axios({
                         method: 'post',
@@ -435,6 +441,8 @@ export default {
 
                               return this.diamond_access;
                         }
+
+                        
 
 
                 })
@@ -485,11 +493,11 @@ export default {
  
     },
     mounted() {
-             this.get_user_stats()
+        this.get_user_stats()
         this.get_bronze_courses()
-        this.get_silver_courses()
-        this.get_gold_courses()
-        this.get_diamond_courses()
+        // this.get_silver_courses()
+        // this.get_gold_courses()
+        // this.get_diamond_courses()
 
    
     },
