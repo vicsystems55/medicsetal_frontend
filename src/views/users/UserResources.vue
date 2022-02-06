@@ -206,7 +206,7 @@ export default {
             },
             get_bronze_courses (){
 
-                                var loader = this.$loading.show({
+                    let loader = this.$loading.show({
                     // Optional parameters
                     container: this.fullPage ? null : this.$refs.formContainer,
                     canCancel: false,
@@ -261,6 +261,8 @@ export default {
                            
                         }
 
+                           loader.hide()
+
                           return this.get_silver_courses();
 
 
@@ -272,16 +274,15 @@ export default {
 
             get_silver_courses (){
 
-                //                 let loader = this.$loading.show({
-                //     // Optional parameters
-                //     container: this.fullPage ? null : this.$refs.formContainer,
-                //     canCancel: false,
-                //     onCancel: this.onCancel,
-                //     color: '#6CC3EC',
-                //        loader: 'bars',
-                //     opacity: 0.3
-                // });
-
+             let loader = this.$loading.show({
+                    // Optional parameters
+                    container: this.fullPage ? null : this.$refs.formContainer,
+                    canCancel: false,
+                    onCancel: this.onCancel,
+                    color: '#6CC3EC',
+                    loader: 'bars',
+                    opacity: 0.3
+                });
                 this.axios({
                         method: 'post',
                         url: process.env.VUE_APP_URL+'/api/courses',
@@ -306,7 +307,7 @@ export default {
 
                     console.log(this.silver_courses)
 
-                    //  loader.hide()
+                 
 
 
                         if (this.user_subscription.id >= this.silver_courses[0].package.id) {
@@ -322,6 +323,8 @@ export default {
                             
                         }
 
+                            loader.hide()
+
                          return this.get_gold_courses();
 
 
@@ -333,13 +336,15 @@ export default {
 
             get_gold_courses (){
 
-                //                 let loader = this.$loading.show({
-                //     // Optional parameters
-                //     container: this.fullPage ? null : this.$refs.formContainer,
-                //     canCancel: false,
-                //     onCancel: this.onCancel,
-                //     color: '#6CC3EC',
-                // });
+           let loader = this.$loading.show({
+                    // Optional parameters
+                    container: this.fullPage ? null : this.$refs.formContainer,
+                    canCancel: false,
+                    onCancel: this.onCancel,
+                    color: '#6CC3EC',
+                    loader: 'bars',
+                    opacity: 0.3
+                });
 
                 this.axios({
                         method: 'post',
@@ -375,7 +380,7 @@ export default {
                         //  return this.gold_access;
 
                         }
-
+                           loader.hide()
                            return this.get_diamond_courses();
 
 
@@ -387,12 +392,14 @@ export default {
 
             get_diamond_courses (){
 
-                                let loader = this.$loading.show({
+                let loader = this.$loading.show({
                     // Optional parameters
                     container: this.fullPage ? null : this.$refs.formContainer,
                     canCancel: false,
                     onCancel: this.onCancel,
                     color: '#6CC3EC',
+                    loader: 'bars',
+                    opacity: 0.3
                 });
 
                 this.axios({
@@ -412,7 +419,7 @@ export default {
 
                     // alert('hello')
 
-                          loader.hide()
+                       
 
                     
                     this.diamond_courses = response.data
@@ -420,7 +427,7 @@ export default {
                    
                     console.log(this.diamond_courses)
 
-                    
+                       loader.hide()
 
                        
 
