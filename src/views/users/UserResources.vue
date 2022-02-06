@@ -249,11 +249,11 @@ export default {
 
                        if (this.user_subscription.id >= this.bronze_courses[0].package.id) {
                            this.bronze_access = true;
-                           alert(this.user_subscription.id)
-                              alert(this.bronze_courses[0].package.id)
-                              alert(this.bronze_access)
+                        //    alert(this.user_subscription.id)
+                        //       alert(this.bronze_courses[0].package.id)
+                        //       alert(this.bronze_access)
                              console.log(this.bronze_access)
-                           this.bronze_access = true;
+                        
 
                            
                         }
@@ -309,9 +309,9 @@ export default {
                            this.silver_access = true;
 
                            
-                         alert(this.user_subscription.id)
-                              alert(this.silver_courses[0].package.id)
-                              alert(this.silver_access)
+                        //  alert(this.user_subscription.id)
+                        //       alert(this.silver_courses[0].package.id)
+                        //       alert(this.silver_access)
                              console.log(this.bronze_access)
                         }
 
@@ -362,12 +362,14 @@ export default {
                      
                      if (this.user_subscription.id >= this.gold_courses[0].package.id) {
 
-                         console.log(this.gold_access);
                         this.gold_access = true;
 
-                             alert(this.user_subscription.id)
-                              alert(this.gold_courses[0].package.id)
-                              alert(this.gold_access)
+                            //  alert(this.user_subscription.id)
+                            //   alert(this.gold_courses[0].package.id)
+                            //   alert(this.gold_access)
+
+                         console.log(this.gold_access);
+
                         }
 
 
@@ -417,9 +419,11 @@ export default {
                            
                           this.diamond_access = true;
 
-                                alert(this.user_subscription.id)
-                              alert(this.diamond_courses[0].package.id)
-                              alert(this.diamond_access)
+                            //     alert(this.user_subscription.id)
+                            //   alert(this.diamond_courses[0].package.id)
+                            //   alert(this.diamond_access)
+
+                              console.log(this.diamond_access)
                         }
 
 
