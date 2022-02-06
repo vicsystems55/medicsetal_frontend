@@ -51,7 +51,18 @@
 
                 <div class="row">
                     <div v-for="silver_course in silver_courses" :key="silver_course.index" class="col-md-4">
-                        <div  style="height: 350px;" class="shadow mb-3">
+                        <div  style="height: 350px; position: relative;" class="shadow mb-3 ml-2">
+                             <div v-if="!silver_access" class="blocked text-center text-white">
+                          
+                                <img class="text-center" style="height: 200px;" src="/img/lock.png" alt="">
+                                <h6 class="text-white">YOU ARE NOT ON THIS PACKAGE </h6>
+
+                                    <router-link :to="{name:'package-details',params:{id:silver_course.package_id} }" class="btn btn-primary">
+                                   UPGRADE
+                                 
+                                    </router-link>
+
+                            </div>
                             <div class="videoWrapper bg-primary shadow border border-success">
 
                                 <!-- <h6 class="text-center pt-5 text-white">Comming Soon</h6> -->
@@ -76,7 +87,19 @@
 
                 <div class="row">
                     <div v-for="gold_course in gold_courses" :key="gold_course.index" class="col-md-4">
-                        <div  style="height: 350px;" class="shadow mb-3">
+                        <div  style="height: 350px; position: relative;" class="shadow mb-3 ml-2">
+
+                            <div v-if="!gold_access" class="blocked text-center text-white">
+                          
+                                <img class="text-center" style="height: 200px;" src="/img/lock.png" alt="">
+                                <h6 class="text-white">YOU ARE NOT ON THIS PACKAGE </h6>
+
+                                    <router-link :to="{name:'package-details',params:{id:gold_course.package_id} }" class="btn btn-primary">
+                                   UPGRADE
+                                 
+                                    </router-link>
+
+                            </div>
                             <div class="videoWrapper bg-primary shadow border border-success">
 
                                  <!-- <h6 class="text-center pt-5 text-white">Comming Soon</h6> -->
@@ -103,7 +126,19 @@
 
                 <div class="row">
                     <div v-for="diamond_course in diamond_courses" :key="diamond_course.index" class="col-md-4">
-                        <div  style="height: 350px;" class="shadow mb-3">
+                        <div  style="height: 350px; position: relative;" class="shadow mb-3 ml-2">
+
+                            <div v-if="!diamond_access" class="blocked text-center text-white">
+                          
+                                <img class="text-center" style="height: 200px;" src="/img/lock.png" alt="">
+                                <h6 class="text-white">YOU ARE NOT ON THIS PACKAGE </h6>
+
+                                    <router-link :to="{name:'package-details',params:{id:diamond_course.package_id} }" class="btn btn-primary">
+                                   UPGRADE
+                                 
+                                    </router-link>
+
+                            </div>
                             <div class="videoWrapper bg-primary shadow border border-success">
 
                                  <!-- <h6 class="text-center pt-5 text-white">Comming Soon</h6> -->
@@ -207,6 +242,8 @@ export default {
                             this.bronze_access = true;
                         }
 
+                        
+
                     console.log(this.bronze_courses)
 
                      loader.hide()
@@ -246,6 +283,12 @@ export default {
                     // alert('hello')
                     
                     this.silver_courses = response.data
+
+                    if (this.user_subscription.id >= this.silver_courses[0].package.id) {
+                            this.silver_access = true;
+                        }
+
+
                     console.log(this.silver_courses)
 
                      loader.hide()
@@ -285,6 +328,10 @@ export default {
                     // alert('hello')
                     
                     this.gold_courses = response.data
+
+                     if (this.user_subscription.id >= this.gold_courses[0].package.id) {
+                            this.gold_access = true;
+                        }
                     console.log(this.gold_courses)
 
                      loader.hide()
@@ -324,6 +371,10 @@ export default {
                     // alert('hello')
                     
                     this.diamond_courses = response.data
+
+                       if (this.user_subscription.id >= this.diamond_courses[0].package.id) {
+                            this.diamond_access = true;
+                        }
                     console.log(this.diamond_courses)
 
                      loader.hide()
