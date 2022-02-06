@@ -58,10 +58,12 @@
                                 <iframe  :src="getVideoUrl(silver_course.video_url)" width="100%" height="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
                         
                             </div>
-                            <div class="p-2">
-                                <h4>{{silver_course.title}}</h4>
-                                <h6>Package: {{silver_course.package.name}}</h6>
-                            </div>
+                              <router-link  :to="{name:'course-details',params:{id:silver_course.id} }">
+                                <div  class="p-2">
+                                    <h4>{{silver_course.title}}</h4>
+                                    <h6>Package: {{silver_course.package.name}}</h6>
+                                </div>
+                            </router-link>
                         </div>
                     </div>
                 </div>
@@ -81,10 +83,12 @@
                                 <iframe  :src="getVideoUrl(gold_course.video_url)" width="100%" height="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
                         
                             </div>
-                            <div class="p-2">
-                                <h4>{{gold_course.title}}</h4>
-                                <h6>Package: {{gold_course.package.name}}</h6>
-                            </div>
+                               <router-link  :to="{name:'course-details',params:{id:gold_course.id} }">
+                                <div  class="p-2">
+                                    <h4>{{gold_course.title}}</h4>
+                                    <h6>Package: {{gold_course.package.name}}</h6>
+                                </div>
+                            </router-link>
                         </div>
                     </div>
                 </div>
@@ -106,10 +110,12 @@
                                  <iframe  :src="getVideoUrl(diamond_course.video_url)" width="100%" height="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
                         
                             </div>
-                            <div class="p-2">
-                                <h4>{{diamond_course.title}}</h4>
-                                <h6>Package: {{diamond_course.package.name}}</h6>
-                            </div>
+                               <router-link  :to="{name:'course-details',params:{id:diamond_course.id} }">
+                                <div  class="p-2">
+                                    <h4>{{diamond_course.title}}</h4>
+                                    <h6>Package: {{diamond_course.package.name}}</h6>
+                                </div>
+                            </router-link>
                         </div>
                     </div>
                 </div>
