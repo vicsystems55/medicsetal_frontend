@@ -54,8 +54,8 @@
                         <div  style="height: 350px;" class="shadow mb-3">
                             <div class="videoWrapper bg-primary shadow border border-success">
 
-                                <h6 class="text-center pt-5 text-white">Comming Soon</h6>
-                                <!-- <iframe  src="https://player.vimeo.com/video/665066889?h=92a31a9029" width="100%" height="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe> -->
+                                <!-- <h6 class="text-center pt-5 text-white">Comming Soon</h6> -->
+                                <iframe  :src="getVideoUrl(silver_course.video_url)" width="100%" height="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
                         
                             </div>
                             <div class="p-2">
