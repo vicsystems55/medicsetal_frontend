@@ -105,7 +105,9 @@
                             <div class="form-group py-2">
                                 <iframe src="https://player.vimeo.com/video/665066889?h=92a31a9029" width="100%" max-height="564" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
                                 <!-- <a target="_blank" class="btn btn-success btn-sm btn-block " :href="whatsappLink">Share on Whatsapp</a> <br> -->
-                                <button @click="shareMe()" class="btn btn-sm btn-primary btn-block">Download and Share on Social Media</button>
+                                <br>
+                                <a href="/video/health_education.mp4" class="btn btn-sm btn-primary btn-block" download>Download Video</a> <br>
+                                <button @click="shareMe()" class="btn btn-sm btn-primary btn-block">Share on Social Media</button>
                             </div>
                         </div>
                     </div>
