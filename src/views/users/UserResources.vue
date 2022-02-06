@@ -246,8 +246,15 @@ export default {
 
                      loader.hide()
 
-                       if (this.user_subscription.id >= this.bronze_courses[0].package.id) {
+                          alert(this.user_subscription.id)
+                              alert(this.bronze_courses[0].package.id)
+                              alert(this.bronze_access)
+                             console.log(this.bronze_access)
 
+                       if (this.user_subscription.id >= this.bronze_courses[0].package.id) {
+                           alert(this.user_subscription.id)
+                              alert(this.bronze_courses[0].package.id)
+                              alert(this.bronze_access)
                              console.log(this.bronze_access)
                            this.bronze_access = true;
 
@@ -299,6 +306,11 @@ export default {
 
                      loader.hide()
 
+                         alert(this.user_subscription.id)
+                              alert(this.silver_courses[0].package.id)
+                              alert(this.silver_access)
+                             console.log(this.bronze_access)
+
                         if (this.user_subscription.id >= this.silver_courses[0].package.id) {
 
                             console.log(this.siver_access)
@@ -344,6 +356,12 @@ export default {
                     console.log(this.gold_courses)
 
                      loader.hide()
+
+                          alert(this.user_subscription.id)
+                              alert(this.gold_courses[0].package.id)
+                              alert(this.gold_access)
+
+                     
 
                      
                      if (this.user_subscription.id >= this.gold_courses[0].package.id) {
@@ -392,6 +410,10 @@ export default {
                     console.log(this.diamond_courses)
 
                      loader.hide()
+
+                             alert(this.user_subscription.id)
+                              alert(this.diamond_courses[0].package.id)
+                              alert(this.diamond_access)
 
                          if (this.user_subscription.id >= this.diamond_courses[0].package.id) {
                              console.log(this.diamond_courses)
