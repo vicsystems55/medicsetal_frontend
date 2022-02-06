@@ -238,15 +238,21 @@ export default {
 
                     //  alert(this.bronze_courses[0].package_id)
 
-                        if (this.user_subscription.id >= this.bronze_courses[0].package.id) {
-                            this.bronze_access = true;
-                        }
+                      
 
                         
 
                     console.log(this.bronze_courses)
 
                      loader.hide()
+
+                       if (this.user_subscription.id >= this.bronze_courses[0].package.id) {
+
+                             console.log(this.bronze_access)
+                           return this.bronze_access = true;
+
+                           
+                        }
 
 
                 })
@@ -263,6 +269,8 @@ export default {
                     canCancel: false,
                     onCancel: this.onCancel,
                     color: '#6CC3EC',
+                       loader: 'bars',
+                    opacity: 0.3
                 });
 
                 this.axios({
@@ -284,14 +292,18 @@ export default {
                     
                     this.silver_courses = response.data
 
-                    if (this.user_subscription.id >= this.silver_courses[0].package.id) {
-                            this.silver_access = true;
-                        }
+                 
 
 
                     console.log(this.silver_courses)
 
                      loader.hide()
+
+                        if (this.user_subscription.id >= this.silver_courses[0].package.id) {
+
+                            console.log(this.siver_access)
+                           return this.silver_access = true;
+                        }
 
 
                 })
@@ -329,12 +341,16 @@ export default {
                     
                     this.gold_courses = response.data
 
-                     if (this.user_subscription.id >= this.gold_courses[0].package.id) {
-                            this.gold_access = true;
-                        }
                     console.log(this.gold_courses)
 
                      loader.hide()
+
+                     
+                     if (this.user_subscription.id >= this.gold_courses[0].package.id) {
+
+                         console.log(this.gold_access);
+                         return  this.gold_access = true;
+                        }
 
 
                 })
@@ -372,12 +388,15 @@ export default {
                     
                     this.diamond_courses = response.data
 
-                       if (this.user_subscription.id >= this.diamond_courses[0].package.id) {
-                            this.diamond_access = true;
-                        }
+                   
                     console.log(this.diamond_courses)
 
                      loader.hide()
+
+                         if (this.user_subscription.id >= this.diamond_courses[0].package.id) {
+                             console.log(this.diamond_courses)
+                          return this.diamond_access = true;
+                        }
 
 
                 })
