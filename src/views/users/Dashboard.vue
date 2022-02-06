@@ -65,7 +65,9 @@
                                 <div class="widget__status-title text-grey">Current Medicsetal Subscription</div>
                                 <div class="widget__trade p-2">
                                     <img class="float-right" style="height: 70px;" v-bind:src="package_image"  alt=""> <br>
-                                <span class="widget__trade-count ">{{user_subscription.name??'No Subscription Yet!!'}}</span>
+                                <span v-if="loading" class="widget__trade-count ">Loading...</span>
+                                <span v-else class="widget__trade-count ">{{user_subscription.name??'No Subscription Yet!!'}}</span>
+
                                 <span class="trade-icon trade-icon--up">
                                     <svg class="icon-icon-trade-up">
                                         <use xlink:href="#icon-trade-up"></use>
@@ -136,7 +138,8 @@ export default {
             user_subscription: [],
             package_image: '',
             no_leads: '',
-            video:[]
+            video:[],
+            loading: false
         }
     },
     methods: {
@@ -242,6 +245,8 @@ export default {
             //     color: '#6CC3EC',
             // });
 
+            this.loading = true
+
             this.axios({
                 method: 'post',
                 url: process.env.VUE_APP_URL +'/api/user_stats',
@@ -261,6 +266,8 @@ export default {
                 this.package_image = response.data.user_data.subscription.package.featured_image
                 this.no_leads = response.data.no_leads
                 // loader.hide()
+
+                this.loading = false
             })
             .catch((response)=>{
 
