@@ -206,7 +206,7 @@ export default {
             },
             get_bronze_courses (){
 
-                                let loader = this.$loading.show({
+                                var loader = this.$loading.show({
                     // Optional parameters
                     container: this.fullPage ? null : this.$refs.formContainer,
                     canCancel: false,
@@ -361,14 +361,7 @@ export default {
                     this.gold_courses = response.data
 
                     console.log(this.gold_courses)
-
-                     loader.hide()
-
-                     
-
-                     
-
-                     
+            
                      if (this.user_subscription.id >= this.gold_courses[0].package.id) {
 
                         this.gold_access = true;
@@ -394,13 +387,13 @@ export default {
 
             get_diamond_courses (){
 
-                //                 let loader = this.$loading.show({
-                //     // Optional parameters
-                //     container: this.fullPage ? null : this.$refs.formContainer,
-                //     canCancel: false,
-                //     onCancel: this.onCancel,
-                //     color: '#6CC3EC',
-                // });
+                                let loader = this.$loading.show({
+                    // Optional parameters
+                    container: this.fullPage ? null : this.$refs.formContainer,
+                    canCancel: false,
+                    onCancel: this.onCancel,
+                    color: '#6CC3EC',
+                });
 
                 this.axios({
                         method: 'post',
@@ -418,13 +411,16 @@ export default {
                 .then((response)=>{
 
                     // alert('hello')
+
+                          loader.hide()
+
                     
                     this.diamond_courses = response.data
 
                    
                     console.log(this.diamond_courses)
 
-                     loader.hide()
+                    
 
                        
 
@@ -439,10 +435,10 @@ export default {
                               console.log(this.diamond_access)
 
 
-                              return this.diamond_access;
+                            //   return this.diamond_access;
                         }
 
-                        
+
 
 
                 })
