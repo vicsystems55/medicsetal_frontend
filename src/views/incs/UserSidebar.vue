@@ -60,7 +60,7 @@
                             </router-link>
                             </li>
 
-                            <li class="sidebar__menu-item">
+                            <li class="sidebar__menu-item d-none">
                             <router-link class="sidebar__link " to="/user/leads" aria-expanded="true">
                                 <span class="sidebar__link-icon">
                                         <svg class="icon-icon-dashboard">
@@ -100,7 +100,7 @@
                             </li>
 
                                                                                     
-                             <li class="sidebar__menu-item">
+                             <li class="sidebar__menu-item d-none">
                              <router-link class="sidebar__link " to="/user/messages" aria-expanded="true">
                                 <span class="sidebar__link-icon">
                                         <svg class="icon-icon-message">
@@ -114,7 +114,7 @@
                                                                                     
                         
                                                                                     
-                             <li class="sidebar__menu-item">
+                             <li class="sidebar__menu-item d-none">
                              <router-link class="sidebar__link " to="/user/subscriptions" aria-expanded="true">
                                 <span class="sidebar__link-icon">
                                         <svg class="icon-icon-dashboard">
