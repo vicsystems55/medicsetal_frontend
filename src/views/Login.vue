@@ -578,7 +578,8 @@ export default {
 
                       toast.error('Name: '+response.data.name);
 
-                      console.log(response)
+
+                      console.log(response) 
                   })  
 
 
