@@ -1,9 +1,10 @@
 import AdminDashboard from '../views/admin/Dashboard'
 import AdminNotifications from '../views/admin/Notifications'
+import AdminMembers from '../views/admin/Members'
 
 // import AdminDemandNotices from '../views/admin/DemandNotices'
 
-import Dashboard from '../views/layouts/Dashboard.vue'
+import xDashboard from '../views/layouts/Dashboard.vue'
 
 
 // import router from '../router'
@@ -16,7 +17,7 @@ export default [
  {
    path: '/admin/',
    name: 'Admin',
-   component: Dashboard,
+   component: xDashboard,
     children: [
         {
             path: 'dashboard',
@@ -26,6 +27,11 @@ export default [
         {
             path: 'notifications',
             component: AdminNotifications
+        },
+
+        {
+            path: 'members',
+            component: AdminMembers
         },
 
 

@@ -9,7 +9,7 @@
 
                   <div class="container">
 
-               <div class="form-group mx-auto text-center">
+                    <div class="form-group mx-auto text-center">
                         <img 
                         onclick="document.getElementById('customFile').click()" 
                         id="previewImg" 
@@ -26,9 +26,7 @@
                         <input type="date" name="" class="col-md-4 mx-auto shadow input" id="">
 
                     </div>
-
-                
-                        
+          
                     <div class="text-center d-none">
                         <input @change="previewFile4" type="file" id="customFile"  >
                         
