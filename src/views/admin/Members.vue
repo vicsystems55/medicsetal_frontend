@@ -131,6 +131,7 @@
                             </tr>
                         </table>
                         <div class="form-group col-md-6 ">
+                            <label for="">Select Account Holder</label>
                             <select class="form-control" v-model="user_id" id="">
                                 <option :value="user.id" selected>{{user.name}}</option>
                             </select>
