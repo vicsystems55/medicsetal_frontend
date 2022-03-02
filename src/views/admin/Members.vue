@@ -90,7 +90,7 @@
                     <div class="card-header" id="headingOne">
                         <div class="row">
                             <div class="col-3">
-                                fg
+                                {{user.id}}
                             </div>
                             <div class="col-3">
                                 <h2 class="mb-0">
@@ -102,8 +102,8 @@
                             <div class="col-3">
                                 <h6>{{user.email}}</h6>
                             </div>
-                            <div class="col-3">
-                          
+                            <div class="col-3 font-weight-bold">
+                         {{user.subscription?.package?.name}}
                             </div>
                         </div>
                     
@@ -120,13 +120,13 @@
 
                             <tr>
                                 <td>Date Created</td>
-                                <th></th>
+                                <th>{{user.created_at}}</th>
 
                             </tr>
 
                                 <tr>
                                 <td>Current Package</td>
-                                <th></th>
+                                <th>{{user.subscription?.package?.name}}</th>
 
                             </tr>
                         </table>
@@ -227,8 +227,8 @@ export default {
 
         createSubscription(){
 
-            alert(this.package_id)
-                  alert(this.user_id)
+            // alert(this.package_id)
+            //       alert(this.user_id)
 
             this.loading = true
 
