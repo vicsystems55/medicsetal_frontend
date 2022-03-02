@@ -568,7 +568,7 @@ export default {
 
                                      toast.success('Login Successful');
 
-                                         return this.$router.push('/admin')
+                                         return this.$router.push('/admin/dashboard')
                                          
                                      }
 

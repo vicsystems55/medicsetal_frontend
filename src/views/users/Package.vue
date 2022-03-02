@@ -123,8 +123,8 @@ export default {
     data() {
         return {
 
-        publicKey: 'pk_test_c8e7a51ee4a62ad2769bb10c39ccfce0f9b8bfa2',
-        email: 'victorasuquob@gmail.com',
+        publicKey: 'pk_live_7e3a00195bd3c33bab74f3ae2d8412dd52dfdeeb',
+        email: JSON.parse(localStorage.getItem('user_data')).email,
         firstname: 'victor',
         lastname: 'asuquo',
         amount: 2500000,

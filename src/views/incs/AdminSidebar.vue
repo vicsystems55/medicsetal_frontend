@@ -87,7 +87,7 @@
                             </li>
 
                                 <li class="sidebar__menu-item">
-                                <router-link class="sidebar__link" to='/Admin/Acknowledgements' aria-expanded="false">
+                                <router-link class="sidebar__link" to='/Admin/Subscriptions' aria-expanded="false">
                                     <span class="sidebar__link-icon">
                                         <svg class="icon-icon-settings">
                                             <use xlink:href="#icon-settings"></use>

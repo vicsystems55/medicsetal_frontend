@@ -2,6 +2,10 @@ import AdminDashboard from '../views/admin/Dashboard'
 import AdminNotifications from '../views/admin/Notifications'
 import AdminMembers from '../views/admin/Members'
 
+import Subscriptions from '../views/admin/Subscriptions'
+
+import Packages from '../views/admin/Packages'
+
 // import AdminDemandNotices from '../views/admin/DemandNotices'
 
 import xDashboard from '../views/layouts/Dashboard.vue'
@@ -32,6 +36,16 @@ export default [
         {
             path: 'members',
             component: AdminMembers
+        },
+
+        {
+            path: 'subscriptions',
+            component: Subscriptions
+        },
+
+        {
+            path: 'packages',
+            component: Packages
         },
 
 
