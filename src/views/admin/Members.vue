@@ -32,6 +32,31 @@
     <div class="tab-pane " >
         <div class=" container" data-simplebar>
 
+            
+            <div class="accordion mb-3" id="accordionExample">
+                <div class="car">
+                    <div class="card-header" id="headingOne">
+                        <div class="row">
+                            <div class="col-3">
+                                #
+                            </div>
+                            <div class="col-3">
+                                Fullname
+                            </div>
+                            <div class="col-3">
+                                Email
+                            </div>
+                            <div class="col-3">
+                                Current Package
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                </div>
+                
+            </div>
+
             <table class="table table--spaces d-none">
                 <thead>
                     <tr>
@@ -43,7 +68,7 @@
                         <th>.</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="d-none">
                     <tr v-for="user in users" :key="user.index">
                         <td></td>
                         <td>{{user.name}}</td>
@@ -63,11 +88,25 @@
             <div class="accordion" id="accordionExample">
                 <div v-for="user in users" :key="user.index" class="car">
                     <div class="card-header" id="headingOne">
-                    <h2 class="mb-0">
-                        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" :data-target="'#tag'+user.id" aria-expanded="true" aria-controls="collapseOne">
-                        {{user.name}}
-                        </button>
-                    </h2>
+                        <div class="row">
+                            <div class="col-3">
+                                fg
+                            </div>
+                            <div class="col-3">
+                                <h2 class="mb-0">
+                                    <h6 class="" type="button" data-toggle="collapse" :data-target="'#tag'+user.id" aria-expanded="true" aria-controls="collapseOne">
+                                    {{user.name}}
+                                    </h6>
+                                </h2>
+                            </div>
+                            <div class="col-3">
+                                <h6>{{user.email}}</h6>
+                            </div>
+                            <div class="col-3">
+                          
+                            </div>
+                        </div>
+                    
                     </div>
 
                     <div :id="'tag'+user.id" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
@@ -92,13 +131,20 @@
                             </tr>
                         </table>
                         <div class="form-group col-md-6 ">
+                            <select class="form-control" v-model="user_id" id="">
+                                <option :value="user.id" selected>{{user.name}}</option>
+                            </select>
                             <label for="">Select Package</label>
-                            <select class="form-control" name="" id="" >
+                            <select v-model="package_id" class="form-control" >
                                 <option value="1">Bronze</option>
                                 <option value="2">Silver</option>
                                 <option value="3">Gold</option>
                                 <option value="4">Diamond</option>
                             </select>
+                        </div>
+                        <div class="form-group">
+                            <button v-if="loading" class="btn btn-primary" disabled>Creating...</button>
+                            <button v-else @click="createSubscription()" class="btn btn-primary">Create Subscription.</button>
                         </div>
                     </div>
                     </div>
@@ -141,10 +187,18 @@
 
 <script>
 
+import { useToast } from 'vue-toastification'
+
+const toast = useToast()
+ 
+
 export default {
     data() {
         return {
-            users: []
+            users: [],
+            user_id: '',
+            package_id: '',
+            loading: false
         }
     },
 
@@ -169,6 +223,44 @@ export default {
             .catch((response)=>{
                 console.log(response)
             })
+        },
+
+        createSubscription(){
+
+            alert(this.package_id)
+                  alert(this.user_id)
+
+            this.loading = true
+
+            this.axios({
+                url: process.env.VUE_APP_URL + '/api/admin_payment_callback',
+                method: 'post',
+                headers:{
+                    'Authorization': 'Bearer ' +localStorage.getItem('user_token')
+                },
+                data:{
+                    user_id: this.user_id,
+                    package_id: this.package_id
+                }
+            })
+            .then((response) =>{
+
+                this.loading = false
+
+                toast.success('Subscription Created for User!!');
+
+
+                console.log(response)
+            })
+            .catch((response) =>{
+
+                this.loading = false
+
+                toast.warning('An Error Occured');
+
+                console.log(response)
+            })
+
         }
     },
     mounted() {
