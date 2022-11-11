@@ -17,11 +17,7 @@
        
                     <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_9n1h4nww.json"  background="transparent"  speed="1"  style="max-width: 400px; max-height: 400px; "  class="mx-auto text-center"   autoplay></lottie-player>
             
-                                
-              
-
-                   
-              
+          
             </div>
         </div>
 

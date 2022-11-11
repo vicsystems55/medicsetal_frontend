@@ -34,7 +34,7 @@
                                             <svg class="icon-icon-wallet">
                                                 <use xlink:href="#icon-wallet"></use>
                                             </svg>
-                                        </span> N {{pack.fee}}</div>
+                                        </span> ₦  {{formatDigit(pack.fee)}}</div>
                                     </div>
                                     </router-link>
                                 </div>
@@ -62,6 +62,14 @@ export default {
     },
 
     methods: {
+
+        formatDigit(digits){
+     
+                return new Intl.NumberFormat('en-US',{
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2,
+                } ).format(digits)
+            },
 
         
           getImageUrl(url) {

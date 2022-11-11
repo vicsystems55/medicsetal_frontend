@@ -138,6 +138,14 @@ export default {
         paystack,
     },
     methods: {
+
+        formatDigit(digits){
+     
+     return new Intl.NumberFormat('en-US',{
+     minimumFractionDigits: 2,
+     maximumFractionDigits: 2,
+     } ).format(digits)
+ },
             getImageUrl(url) {
                 // var images = require.context('../assets/', false, /\.png$/)
                 return url
