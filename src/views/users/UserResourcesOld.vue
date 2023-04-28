@@ -7,7 +7,6 @@
 
                 <div style="background-color: #b08d57;" class="c  shadow p-3 ">
                     <h4 class="text-dark text-center ">Bronze Package</h4>
-                 
                 </div>
 
                 <hr class="">
@@ -15,13 +14,9 @@
                 <div class="row ">
                     
                     <div v-for="bronze_course in bronze_courses" :key="bronze_course.index" class="col-md-4">
-                     
-                        <div  style="height: 350px; position: relative;" class="shadow mb-3 ml-2">
-                            <div v-if="user_subscription.package_id >= bronze_course.package_id" class="videoWrapper bg-primary shadow border border-success">
-                                <iframe  :src="getVideoUrl(bronze_course.video_url)" width="100%" height="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
                         
-                            </div>
-                            <div v-else class="blocked text-center text-white">
+                        <div  style="height: 350px; position: relative;" class="shadow mb-3 ml-2">
+                            <div v-if="!bronze_access" class="blocked text-center text-white">
                           
                                 <img class="text-center" style="height: 200px;" src="/img/lock.png" alt="">
                                 <h6 class="text-white">YOU ARE NOT ON THIS PACKAGE </h6>
@@ -32,7 +27,10 @@
                                     </router-link>
 
                             </div>
-                          
+                            <div class="videoWrapper bg-primary shadow border border-success">
+                                <iframe  :src="getVideoUrl(bronze_course.video_url)" width="100%" height="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                        
+                            </div>
                          
                               <router-link  :to="{name:'course-details',params:{id:bronze_course.id} }">
                                 <div  class="p-2">
@@ -53,32 +51,31 @@
 
                 <div class="row">
                     <div v-for="silver_course in silver_courses" :key="silver_course.index" class="col-md-4">
-                     
                         <div  style="height: 350px; position: relative;" class="shadow mb-3 ml-2">
-                         <div v-if="user_subscription.package_id >= silver_course.package_id" class="videoWrapper bg-primary shadow border border-success">
-                             <iframe  :src="getVideoUrl(silver_course.video_url)" width="100%" height="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-                     
-                         </div>
-                         <div v-else class="blocked text-center text-white">
-                       
-                             <img class="text-center" style="height: 200px;" src="/img/lock.png" alt="">
-                             <h6 class="text-white">YOU ARE NOT ON THIS PACKAGE </h6>
+                             <div v-if="!silver_access" class="blocked text-center text-white">
+                          
+                                <img class="text-center" style="height: 200px;" src="/img/lock.png" alt="">
+                                <h6 class="text-white">YOU ARE NOT ON THIS PACKAGE </h6>
 
-                                 <router-link :to="{name:'package-details',params:{id:silver_course.package_id} }" class="btn btn-primary">
-                                UPGRADE
-                              
-                                 </router-link>
+                                    <router-link :to="{name:'package-details',params:{id:silver_course.package_id} }" class="btn btn-primary">
+                                   UPGRADE
+                                 
+                                    </router-link>
 
-                         </div>
-                       
-                      
-                           <router-link  :to="{name:'course-details',params:{id:silver_course.id} }">
-                             <div  class="p-2">
-                                 <h4>{{silver_course.title}}</h4>
-                                 <h6>Package: {{silver_course.package.name}}</h6>
-                             </div>
-                         </router-link>
-                     </div>
+                            </div>
+                            <div class="videoWrapper bg-primary shadow border border-success">
+
+                                <!-- <h6 class="text-center pt-5 text-white">Comming Soon</h6> -->
+                                <iframe  :src="getVideoUrl(silver_course.video_url)" width="100%" height="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                        
+                            </div>
+                              <router-link  :to="{name:'course-details',params:{id:silver_course.id} }">
+                                <div  class="p-2">
+                                    <h4>{{silver_course.title}}</h4>
+                                    <h6>Package: {{silver_course.package.name}}</h6>
+                                </div>
+                            </router-link>
+                        </div>
                     </div>
                 </div>
 
@@ -90,32 +87,32 @@
 
                 <div class="row">
                     <div v-for="gold_course in gold_courses" :key="gold_course.index" class="col-md-4">
-                     
-                     <div  style="height: 350px; position: relative;" class="shadow mb-3 ml-2">
-                      <div v-if="user_subscription.package_id >= gold_course.package_id" class="videoWrapper bg-primary shadow border border-success">
-                          <iframe  :src="getVideoUrl(gold_course.video_url)" width="100%" height="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-                  
-                      </div>
-                      <div v-else class="blocked text-center text-white">
-                    
-                          <img class="text-center" style="height: 200px;" src="/img/lock.png" alt="">
-                          <h6 class="text-white">YOU ARE NOT ON THIS PACKAGE </h6>
+                        <div  style="height: 350px; position: relative;" class="shadow mb-3 ml-2">
 
-                              <router-link :to="{name:'package-details',params:{id:gold_course.package_id} }" class="btn btn-primary">
-                             UPGRADE
-                           
-                              </router-link>
+                            <div v-if="!gold_access" class="blocked text-center text-white">
+                          
+                                <img class="text-center" style="height: 200px;" src="/img/lock.png" alt="">
+                                <h6 class="text-white">YOU ARE NOT ON THIS PACKAGE </h6>
 
-                      </div>
-                    
-                   
-                        <router-link  :to="{name:'course-details',params:{id:gold_course.id} }">
-                          <div  class="p-2">
-                              <h4>{{gold_course.title}}</h4>
-                              <h6>Package: {{gold_course.package.name}}</h6>
-                          </div>
-                      </router-link>
-                    </div>
+                                    <router-link :to="{name:'package-details',params:{id:gold_course.package_id} }" class="btn btn-primary">
+                                   UPGRADE
+                                 
+                                    </router-link>
+
+                            </div>
+                            <div class="videoWrapper bg-primary shadow border border-success">
+
+                                 <!-- <h6 class="text-center pt-5 text-white">Comming Soon</h6> -->
+                                <iframe  :src="getVideoUrl(gold_course.video_url)" width="100%" height="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                        
+                            </div>
+                               <router-link  :to="{name:'course-details',params:{id:gold_course.id} }">
+                                <div  class="p-2">
+                                    <h4>{{gold_course.title}}</h4>
+                                    <h6>Package: {{gold_course.package.name}}</h6>
+                                </div>
+                            </router-link>
+                        </div>
                     </div>
                 </div>
 
@@ -129,32 +126,32 @@
 
                 <div class="row">
                     <div v-for="diamond_course in diamond_courses" :key="diamond_course.index" class="col-md-4">
-                     
-                     <div  style="height: 350px; position: relative;" class="shadow mb-3 ml-2">
-                      <div v-if="user_subscription.package_id >= diamond_course.package_id" class="videoWrapper bg-primary shadow border border-success">
-                          <iframe  :src="getVideoUrl(diamond_course.video_url)" width="100%" height="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-                  
-                      </div>
-                      <div v-else class="blocked text-center text-white">
-                    
-                          <img class="text-center" style="height: 200px;" src="/img/lock.png" alt="">
-                          <h6 class="text-white">YOU ARE NOT ON THIS PACKAGE </h6>
+                        <div  style="height: 350px; position: relative;" class="shadow mb-3 ml-2">
 
-                              <router-link :to="{name:'package-details',params:{id:diamond_course.package_id} }" class="btn btn-primary">
-                             UPGRADE
-                           
-                              </router-link>
+                            <div v-if="!diamond_access" class="blocked text-center text-white">
+                          
+                                <img class="text-center" style="height: 200px;" src="/img/lock.png" alt="">
+                                <h6 class="text-white">YOU ARE NOT ON THIS PACKAGE </h6>
 
-                      </div>
-                    
-                   
-                        <router-link  :to="{name:'course-details',params:{id:diamond_course.id} }">
-                          <div  class="p-2">
-                              <h4>{{diamond_course.title}}</h4>
-                              <h6>Package: {{diamond_course.package.name}}</h6>
-                          </div>
-                      </router-link>
-                    </div>
+                                    <router-link :to="{name:'package-details',params:{id:diamond_course.package_id} }" class="btn btn-primary">
+                                   UPGRADE
+                                 
+                                    </router-link>
+
+                            </div>
+                            <div class="videoWrapper bg-primary shadow border border-success">
+
+                                 <!-- <h6 class="text-center pt-5 text-white">Comming Soon</h6> -->
+                                 <iframe  :src="getVideoUrl(diamond_course.video_url)" width="100%" height="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                        
+                            </div>
+                               <router-link  :to="{name:'course-details',params:{id:diamond_course.id} }">
+                                <div  class="p-2">
+                                    <h4>{{diamond_course.title}}</h4>
+                                    <h6>Package: {{diamond_course.package.name}}</h6>
+                                </div>
+                            </router-link>
+                        </div>
                     </div>
                 </div>
 
@@ -207,34 +204,6 @@ export default {
                 // var images = require.context('../assets/', false, /\.png$/)
                 return url
             },
-
-            getCourses(){
-                this.axios({
-                    method: 'get',
-                    url: process.env.VUE_APP_URL+'/api/coursesx',
-                    headers: {
-                        'Access-Control-Allow-Origin': '*',
-                        'Content-type': 'application/json',
-                        'Accept': 'application/json',
-                        'Authorization': 'Bearer ' +localStorage.getItem('user_token')
-                    },
-
-                })
-                .then((response)=>{
-                    console.log(response)
-                    this.bronze_courses = response.data.bronzeCourses
-                    this.silver_courses = response.data.silverCourses
-                    this.gold_courses = response.data.goldCourses
-                    this.diamond_courses = response.data.diamondCourses
-                    this.user_subscription = response.data.userSub
-
-
-                })
-                .catch((res)=>{
-                    console.log(res)
-                })
-            },
-
             get_bronze_courses (){
 
                     let loader = this.$loading.show({
@@ -527,9 +496,8 @@ export default {
  
     },
     mounted() {
-        this.getCourses()
-        // this.get_user_stats()
-        // this.get_bronze_courses()
+        this.get_user_stats()
+        this.get_bronze_courses()
         // this.get_silver_courses()
         // this.get_gold_courses()
         // this.get_diamond_courses()

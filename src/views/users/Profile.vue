@@ -49,6 +49,25 @@
             <div class="col-md-6 mx-auto">
 
                 <div class="form-group">
+                    <label for="na">Name</label>
+                    <input type="text" class="form-control" :value="userData.name" disabled>
+                </div>
+                <div class="form-group">
+                    <label for="nsa">Email</label>
+                    <input type="text" class="form-control" :value="userData.email" disabled>
+                </div>
+
+                <div class="form-group">
+                    <label for="nsa">Username</label>
+                    <input type="text" class="form-control" :value="userData.username" disabled>
+                </div>
+
+                <div class="form-group">
+                    <label for="nsa">Usercode</label>
+                    <input type="text" class="form-control" :value="userData.usercode" disabled>
+                </div>
+
+                <div class="form-group">
                     <label for="">Bio</label>
                     <textarea v-model="bio" id="" cols="30" rows="5" placeholder="Tell us about yourself" class="form-control"></textarea>
                 </div>
@@ -120,7 +139,10 @@ export default {
             nok_address : '',
             nok_relationship : '',
             nok_phone : '',
-            user_profile: []
+            user_profile: [],
+            userData: [],
+
+            
             
         }
     },
@@ -149,7 +171,7 @@ export default {
                     color: '#6CC3EC',
                 });
 
-                alert(this.address)
+                // alert(this.address)
                 //    alert(this.nationality)
                 //       alert(this.address)
                 //          alert(this.phone)
@@ -213,7 +235,7 @@ export default {
                     })
                     .then((response)=>{
 
-                        console.log(response)
+                        // console.log(response)
 
                         this.bio = response.data.bio
                         this.nationality = response.data.nationality
@@ -236,11 +258,17 @@ export default {
                     })
 
 
+        },
+        getUserData(){
+            this.userData = JSON.parse(localStorage.getItem('user_data'));
+
+            // console.log(this.userData);
         }
     },
 
     mounted() {
         this.getProfile()
+        this.getUserData()
     },
 }
 </script>
