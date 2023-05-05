@@ -29,6 +29,18 @@
                         
                     </div>
                 </div>
+
+                <div class="container py-3">
+                <div class="col-md-8 mx-auto">
+                    <div class="form-group">
+                        <input type="text" class="form-control form-control-lg" v-model="key" placeholder="Enter a search query..">
+                    </div>
+
+                    <div class="text-center">
+                        <button class="btn btn-primary shadow" @click="searchMembers">Search</button>
+                    </div>
+                </div>
+            </div>
     <div class="tab-pane " >
         <div class=" container" data-simplebar>
 
@@ -83,6 +95,8 @@
                     </tr>
                 </tbody>
             </table>
+
+           
 
 
             <div class="accordion" id="accordionExample">
@@ -199,7 +213,8 @@ export default {
             users: [],
             user_id: '',
             package_id: '',
-            loading: false
+            loading: false,
+            key: '',
         }
     },
 
@@ -208,6 +223,31 @@ export default {
             this.axios({
                 url: process.env.VUE_APP_URL + '/api/get_profile',
                 method: 'post',
+                headers: {
+                    'Access-Control-Allow-Origin': '*',
+                    'Content-type': 'application/json',
+                    'Accept': 'application/json',
+                    'Authorization': 'Bearer ' +localStorage.getItem('user_token')
+                },
+
+            })
+            .then((response)=>{
+                this.users = response.data
+
+                console.log(response)
+            })
+            .catch((response)=>{
+                console.log(response)
+            })
+        },
+
+        searchMembers(){
+            this.axios({
+                url: process.env.VUE_APP_URL + '/api/get_profile',
+                method: 'post',
+                data:{
+                    key: this.key
+                },
                 headers: {
                     'Access-Control-Allow-Origin': '*',
                     'Content-type': 'application/json',
